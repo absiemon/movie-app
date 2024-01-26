@@ -1,0 +1,1502 @@
+[
+    {
+        "language": "Hindi",
+        "question": "हिंदी में \"किताब\" का अर्थ क्या है?",
+        "options": [
+            "Book",
+            "Pen",
+            "Table",
+            "Chair"
+        ],
+        "answer": "Book",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Hindi",
+        "question": "\"नमस्ते\" का उपयोग किस स्थिति में होता है?",
+        "options": [
+            "पूजा",
+            "स्नान",
+            "स्वागत",
+            "समर्थन"
+        ],
+        "answer": "स्वागत",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Hindi",
+        "question": "How do you say \"good morning\" in Hindi?",
+        "options": [
+            "नमस्ते (Namaste)",
+            "गुड मॉर्निंग (Good Morning)",
+            "सुबह बख़ैर (Subah Bakhair)",
+            "वाह क्या बात है! (Wah Kya Baat Hai!)"
+        ],
+        "answer": "सुबह बख़ैर (Subah Bakhair)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Hindi",
+        "question": "What is the Hindi word for \"hello\"?",
+        "options": [
+            "पूजा",
+            "स्नान",
+            "धन्यवाद (Dhanyavad)",
+            "नमस्ते (Namaste)"
+        ],
+        "answer": "नमस्ते (Namaste)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Hindi",
+        "question": "How do you say \"thank you\" in Hindi to someone older than you?",
+        "options": [
+            "शुक्रिया (Shukriya)",
+            "धन्यवाद (Dhanyavad)",
+            "आपका बहुत-बहुत धन्यवाद (Aapka bahut-bahut dhanyavad)",
+            "जी धन्यवाद (Ji dhanyavad)"
+        ],
+        "answer": "आपका बहुत-बहुत धन्यवाद (Aapka bahut-bahut dhanyavad)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Hindi",
+        "question": "Can you identify the correct Hindi numeral for the number 3?",
+        "options": [
+            "१",
+            "२",
+            "३",
+            "४"
+        ],
+        "answer": "३",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Hindi",
+        "question": "Which Hindi sentence means \"My name is John\"?",
+        "options": [
+            "मेरा नाम जॉन है। (Mera naam John hai.)",
+            "जॉन मेरा नाम है। (John mera naam hai.)",
+            "है जॉन मेरा नाम। (Hai John mera naam.)",
+            "जॉन है मेरा नाम। (John hai mera naam.)"
+        ],
+        "answer": "मेरा नाम जॉन है। (Mera naam John hai.)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Hindi",
+        "question": "What is the correct translation for \"telephone\"?",
+        "options": [
+            "टेलीफोन (Telephone)",
+            "छाता (Chhata)",
+            "साइकिल (Cycle)",
+            "पानी (Paani)"
+        ],
+        "answer": "टेलीफोन (Telephone)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Hindi",
+        "question": "हिंदी में \"शिक्षक\" का अर्थ क्या है?",
+        "options": [
+            "Doctor",
+            "Teacher",
+            "Engineer",
+            "Farmer"
+        ],
+        "answer": "Teacher",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Hindi",
+        "question": "What is the correct translation for \"credit card\"?",
+        "options": [
+            "पुस्तक (Pustak)",
+            "लिफाफा (Lifafa)",
+            "क्रेडिट कार्ड (Credit Card)",
+            "समाचार-पत्र (Samachar-patra)"
+        ],
+        "answer": "क्रेडिट कार्ड (Credit Card)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Hindi",
+        "question": "What is the correct translation for \"Please\"?",
+        "options": [
+            "बाएं (Baayein)",
+            "नमस्कार (Namaskaar)",
+            "कृपया करके (Kripaya Karke)",
+            "क्षमा कीजिए (Kshama Kijiye)"
+        ],
+        "answer": "कृपया करके (Kripaya Karke)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Hindi",
+        "question": "How do you ask \"How are you?\" in Hindi in a formal way?",
+        "options": [
+            "आप कैसे हैं? (Aap kaise hain?)",
+            "तुम कैसे हो? (Tum kaise ho?)",
+            "क्या हाल है? (Kyahaal hai?)",
+            "नमस्ते! (Namaste!)"
+        ],
+        "answer": "आप कैसे हैं? (Aap kaise hain?)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Hindi",
+        "question": "Conjugate the Hindi verb \"जाना\" (jaana, meaning \"to go\") in the future tense for \"we\".",
+        "options": [
+            "जाएंगे (jayenge)",
+            "जा रहे हैं (ja rahe hain)",
+            "गए हैं (gaye hain)",
+            "जाओ (jao)"
+        ],
+        "answer": "जाएंगे (jayenge)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Hindi",
+        "question": "Which of these words is NOT a synonym for \"happy\" in Hindi?",
+        "options": [
+            "खुश (Khush)",
+            "हर्षित (Harshith)",
+            "प्रसन्न (Prasann)",
+            "दुखी (Dukhi)"
+        ],
+        "answer": "दुखी (Dukhi)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Hindi",
+        "question": "Which of these words is NOT a synonym for \"beautiful\" in Hindi?",
+        "options": [
+            "सुंदर (Sundar)",
+            "सुन्दर (Sundar)",
+            "खूबसूरत (Khoobsurat)",
+            "प्यारा (Pyaara)"
+        ],
+        "answer": "प्यारा (Pyaara)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Hindi",
+        "question": "What is the correct translation for \"Thank you very much\"?",
+        "options": [
+            "मुझे नहीं पता। (Mujhe nahi pata.)",
+            "क्षमा कीजिए। (Kshama kijiye.)",
+            "बहुत-बहुत धन्यवाद। (Bahut-bahut dhanyavaad.)",
+            "वाह-वाह! (Wah-Wah!)"
+        ],
+        "answer": "बहुत-बहुत धन्यवाद। (Bahut-bahut dhanyavaad.)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Hindi",
+        "question": "Which Hindi word describes something that is \"दर्दनाक\" (dardnak, meaning \"painful\")?",
+        "options": [
+            "सुंदर (Sundar)",
+            "सुखदायक (Sukhadaayak)",
+            "सुगंधित (Sugandhit)",
+            "भयानक (Bhayanak)"
+        ],
+        "answer": "भयानक (Bhayanak)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Hindi",
+        "question": "\"मैं भूखा हूँ\" का अर्थ क्या है?",
+        "options": [
+            "I am thirsty",
+            "I am hungry",
+            "I am tired",
+            "I am happy"
+        ],
+        "answer": "I am hungry",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Hindi",
+        "question": "Select the antonym for \"जलता हुआ\":",
+        "options": [
+            "Glowing",
+            "Burning",
+            "Extinguished",
+            "Shining"
+        ],
+        "answer": "Extinguished",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Hindi",
+        "question": "Form the correct sentence: \"वह बहुत अच्छा गाता है.\"",
+        "options": [
+            "He sings very well",
+            "He dances very well",
+            "He speaks very well",
+            "He paints very well"
+        ],
+        "answer": "He sings very well",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Hindi",
+        "question": "Can you identify the correct instrumental case of the Hindi noun \"लड़का\" (ladka, meaning \"boy\")?",
+        "options": [
+            "लड़के से (ladke se)",
+            "लड़के में (ladke mein)",
+            "लड़के द्वारा (ladke dvara)",
+            "लड़के को (ladke ko)"
+        ],
+        "answer": "लड़के से (ladke se)",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Hindi",
+        "question": "Identify the correct possessive construction for \"My sister's book\" in Hindi.",
+        "options": [
+            "बहन की किताब (bahan ki kitaab)",
+            "किताब की बहन (kitaab ki bahan)",
+            "मेरी किताब की बहन (meri kitaab ki bahan)",
+            "बहन मेरी किताब (bahan meri kitaab)"
+        ],
+        "answer": "बहन की किताब (bahan ki kitaab)",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Hindi",
+        "question": "Which famous Hindi poem starts with the line \"वंदे मातरम्, सुजला सुफलाम्...\" (Vande Mataram, Sujla Suphalam...)?",
+        "options": [
+            "राष्ट्रगीत (Rashtrageet) (National Anthem)",
+            "सारे जहां से अच्छा हिन्दोस्तान हमारा (Sare Jahan Se Achcha Hindustan Hamara)",
+            "मेघदूत (Meghadoota)",
+            "नुश्रवां का बगीचा (Nushrat ka Baghicha)"
+        ],
+        "answer": "राष्ट्रगीत (Rashtrageet) (National Anthem)",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Hindi",
+        "question": "What Hindi idiom does \"हाथी के दाँत खाने के बहाने, दर्शन कराना\" (haathi ke daant khaane ke bahane, darshan karana) mean?",
+        "options": [
+            "To kill two birds with one stone",
+            "To use a pretext for a personal gain",
+            "To look before you leap",
+            "To cry over spilled milk"
+        ],
+        "answer": "To use a pretext for a personal gain",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Hindi",
+        "question": "Translate \"आत्मविश्वास\" into English",
+        "options": [
+            "Self-confidence",
+            "Self-control",
+            "Self-esteem",
+            "Self-discipline"
+        ],
+        "answer": "Self-confidence",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "English",
+        "question": "Translate the word \"मित्र\" into English.",
+        "options": [
+            "Friend",
+            "Enemy",
+            "Love",
+            "Family"
+        ],
+        "answer": "Friend",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "English",
+        "question": "How do you say \"good morning\" in Hindi?",
+        "options": [
+            "नमस्ते (Namaste)",
+            "गुड मॉर्निंग (Good Morning)",
+            "सुबह बख़ैर (Subah Bakhair)",
+            "वाह क्या बात है! (Wah Kya Baat Hai!)"
+        ],
+        "answer": "सुबह बख़ैर (Subah Bakhair)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "English",
+        "question": "Translate the word \"खुशी\" into English.",
+        "options": [
+            "Happiness",
+            "Sadness",
+            "Anger",
+            "Fear"
+        ],
+        "answer": "Happiness",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "English",
+        "question": "Complete the sentence: \"I ____ to the store.\"",
+        "options": [
+            "am going",
+            "will go",
+            "goes",
+            "gone"
+        ],
+        "answer": "am going",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "English",
+        "question": "Which English word means \"विद्यार्थी\" (vidyarthi) in Hindi?",
+        "options": [
+            "Teacher",
+            "Student",
+            "Doctor",
+            "Engineer"
+        ],
+        "answer": "Student",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "English",
+        "question": "Translate the phrase \"मेरा नाम जॉन है।\" into English.",
+        "options": [
+            "My name is John.",
+            "I am John.",
+            "John is my name.",
+            "John, my name."
+        ],
+        "answer": "My name is John.",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "English",
+        "question": "What is the correct translation for \"Please\"?",
+        "options": [
+            "बाएं (Baayein)",
+            "नमस्कार (Namaskaar)",
+            "कृपया करके (Kripaya Karke)",
+            "क्षमा कीजिए (Kshama Kijiye)"
+        ],
+        "answer": "कृपया करके (Kripaya Karke)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "English",
+        "question": "Translate the word \"बहुत\" into English.",
+        "options": [
+            "A lot",
+            "Little",
+            "Big",
+            "Small"
+        ],
+        "answer": "A lot",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "English",
+        "question": "Identify the correct instrumental case of the Hindi noun \"गीत\" (geet, meaning \"song\")?",
+        "options": [
+            "गीत से (geet se)",
+            "गीत में (geet mein)",
+            "गीत द्वारा (geet dvara)",
+            "गीत को (geet ko)"
+        ],
+        "answer": "गीत से (geet se)",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "English",
+        "question": "How do you ask \"How are you?\" in Hindi in a formal way?",
+        "options": [
+            "आप कैसे हैं? (Aap kaise hain?)",
+            "तुम कैसे हो? (Tum kaise ho?)",
+            "क्या हाल है? (Kyahaal hai?)",
+            "नमस्ते! (Namaste!)"
+        ],
+        "answer": "आप कैसे हैं? (Aap kaise hain?)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "English",
+        "question": "What is the correct translation for \"Thank you very much\"?",
+        "options": [
+            "मुझे नहीं पता। (Mujhe nahi pata.)",
+            "क्षमा कीजिए। (Kshama kijiye.)",
+            "बहुत-बहुत धन्यवाद। (Bahut-bahut dhanyavaad.)",
+            "वाह-वाह! (Wah-Wah!)"
+        ],
+        "answer": "बहुत-बहुत धन्यवाद। (Bahut-bahut dhanyavaad.)",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "English",
+        "question": "Translate the word \"दिन\" into English.",
+        "options": [
+            "Day",
+            "Night",
+            "Sun",
+            "Moon"
+        ],
+        "answer": "Day",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "English",
+        "question": "Translate the phrase \"मुझे थोड़ा समय दो\" into English.",
+        "options": [
+            "Give me some time.",
+            "Take some time.",
+            "Have some time.",
+            "Waste some time."
+        ],
+        "answer": "Give me some time.",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "English",
+        "question": "What is the correct translation for \"दिनचर्या\"?",
+        "options": [
+            "Daily routine",
+            "Weekly schedule",
+            "Monthly plan",
+            "Yearly calendar"
+        ],
+        "answer": "Daily routine",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "English",
+        "question": "Translate the phrase \"आपका स्वागत है\" into English.",
+        "options": [
+            "You're welcome.",
+            "Thank you.",
+            "Hello.",
+            "Goodbye."
+        ],
+        "answer": "You're welcome.",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "English",
+        "question": "Identify the correct plural form of the word \"child\".",
+        "options": [
+            "Children",
+            "Childs",
+            "Childers",
+            "Childs"
+        ],
+        "answer": "Children",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "English",
+        "question": "Translate the word \"उत्साही\" into English.",
+        "options": [
+            "Excited",
+            "Calm",
+            "Sad",
+            "Angry"
+        ],
+        "answer": "Excited",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "English",
+        "question": "Complete the sentence: \"She ____ to the market.\"",
+        "options": [
+            "go",
+            "goes",
+            "going",
+            "gone"
+        ],
+        "answer": "goes",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "English",
+        "question": "Translate the phrase \"मैं तुमसे प्यार करता हूँ।\" into English.",
+        "options": [
+            "I love you.",
+            "You love me.",
+            "We love together.",
+            "Love is with you."
+        ],
+        "answer": "I love you.",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "English",
+        "question": "What is the correct translation for \"महान\"?",
+        "options": [
+            "Great",
+            "Small",
+            "Beautiful",
+            "Sad"
+        ],
+        "answer": "Great",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "English",
+        "question": "Translate the phrase \"बहुत कम\" into English.",
+        "options": [
+            "Very less",
+            "Very much",
+            "Very little",
+            "Very large"
+        ],
+        "answer": "Very little",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "English",
+        "question": "Identify the correct plural form of the word \"mouse\".",
+        "options": [
+            "Mouses",
+            "Mice",
+            "Mousen",
+            "Mouse"
+        ],
+        "answer": "Mice",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "English",
+        "question": "Translate the phrase \"बहुत अच्छा\" into English.",
+        "options": [
+            "Very good",
+            "Very bad",
+            "Very sad",
+            "Very happy"
+        ],
+        "answer": "Very good",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "English",
+        "question": "What is the antonym for the English word \"beautiful\"?",
+        "options": [
+            "Ugly",
+            "Pretty",
+            "Attractive",
+            "Lovely"
+        ],
+        "answer": "Ugly",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "English",
+        "question": "Translate the word \"बहन\" into English.",
+        "options": [
+            "Sister",
+            "Brother",
+            "Mother",
+            "Father"
+        ],
+        "answer": "Sister",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the word \"amigo\" into Spanish.",
+        "options": [
+            "Friend",
+            "Enemy",
+            "Love",
+            "Family"
+        ],
+        "answer": "Friend",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Spanish",
+        "question": "How do you say \"good morning\" in Spanish?",
+        "options": [
+            "Hola",
+            "Buenas noches",
+            "Buenos días",
+            "Adiós"
+        ],
+        "answer": "Buenos días",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the word \"familia\" into Spanish.",
+        "options": [
+            "Happiness",
+            "Sadness",
+            "Family",
+            "Fear"
+        ],
+        "answer": "Family",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Spanish",
+        "question": "Complete the sentence: \"Yo ____ en casa.\"",
+        "options": [
+            "soy",
+            "seré",
+            "estoy",
+            "estaré"
+        ],
+        "answer": "estoy",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Spanish",
+        "question": "Which Spanish word means \"estudiante\" in English?",
+        "options": [
+            "Teacher",
+            "Student",
+            "Doctor",
+            "Engineer"
+        ],
+        "answer": "Student",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Spanish",
+        "question": "What is the correct translation for \"telephone\"?",
+        "options": [
+            "el teléfono",
+            "el agua",
+            "un paraguas",
+            "una bicicleta"
+        ],
+        "answer": "el teléfono",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Spanish",
+        "question": "How do you say \"Good afternoon\"?",
+        "options": [
+            "Adios",
+            "Buenas tardes",
+            "Buenos días",
+            "Buenas noches"
+        ],
+        "answer": "Buenas tardes",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Spanish",
+        "question": "How do you say \"Good evening\"?",
+        "options": [
+            "Muchas gracias",
+            "unas llaves",
+            "Buenas noches",
+            "Adios"
+        ],
+        "answer": "Buenas noches",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Spanish",
+        "question": "What is the correct translation for \"Please\"?",
+        "options": [
+            "Por favor",
+            "izquierda",
+            "Perdón",
+            "Hola"
+        ],
+        "answer": "Por favor",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the phrase \"Mi nombre es Juan.\" into Spanish.",
+        "options": [
+            "My name is Juan",
+            "I am Juan",
+            "Juan is my name",
+            "Juan, my name"
+        ],
+        "answer": "My name is Juan",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Spanish",
+        "question": "What is the correct translation for \"Por favor\"?",
+        "options": [
+            "Hello",
+            "Thank you",
+            "Excuse me",
+            "Please"
+        ],
+        "answer": "Please",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Spanish",
+        "question": "How do you ask \"How are you?\" in Spanish in a formal way?",
+        "options": [
+            "¿Cómo estás?",
+            "¿Cómo te llamas?",
+            "¿Cómo está usted?",
+            "¿Qué tal?"
+        ],
+        "answer": "¿Cómo está usted?",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Spanish",
+        "question": "What is the correct translation for \"Gracias\"?",
+        "options": [
+            "Hello",
+            "Thank you",
+            "Excuse me",
+            "Please"
+        ],
+        "answer": "Thank you",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the word \"libro\" into Spanish.",
+        "options": [
+            "Book",
+            "Table",
+            "Chair",
+            "Pen"
+        ],
+        "answer": "Book",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Spanish",
+        "question": "What does the acronym \"UNESCO\" stand for?",
+        "options": [
+            "United Nations Educational, Scientific and Cultural Organization",
+            "Universal Network of Educators and Scholars Organization",
+            "Union of Nations for Educational and Scientific Cooperation",
+            "United Nations for Education, Science, and Cultural Organization"
+        ],
+        "answer": "United Nations Educational, Scientific and Cultural Organization",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the phrase \"No hay problema\" into English.",
+        "options": [
+            "No problem",
+            "Big problem",
+            "Some problem",
+            "Many problems"
+        ],
+        "answer": "No problem",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Spanish",
+        "question": "What is the correct translation for \"feliz\"?",
+        "options": [
+            "Sad",
+            "Happy",
+            "Angry",
+            "Excited"
+        ],
+        "answer": "Happy",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Spanish",
+        "question": "Complete the sentence: \"Ella ____ al cine.\"",
+        "options": [
+            "ir",
+            "va",
+            "voy",
+            "vamos"
+        ],
+        "answer": "va",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the phrase \"Muy bien\" into English.",
+        "options": [
+            "Very good",
+            "Very bad",
+            "Very sad",
+            "Very happy"
+        ],
+        "answer": "Very good",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the word \"computadora\" into Spanish.",
+        "options": [
+            "Computer",
+            "Television",
+            "Radio",
+            "Telephone"
+        ],
+        "answer": "Computer",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Spanish",
+        "question": "Identify the correct plural form of the word \"niño\".",
+        "options": [
+            "Niños",
+            "Niñoes",
+            "Niñós",
+            "Niñis"
+        ],
+        "answer": "Niños",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the phrase \"Tu corazón es muy grande.\" into Spanish.",
+        "options": [
+            "Your heart is very big",
+            "My heart is very big",
+            "His heart is very big",
+            "Her heart is very big"
+        ],
+        "answer": "Your heart is very big",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Spanish",
+        "question": "What is the correct translation for \"excelente\"?",
+        "options": [
+            "Great",
+            "Small",
+            "Beautiful",
+            "Sad"
+        ],
+        "answer": "Great",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Spanish",
+        "question": "Translate the phrase \"Te amo.\" into Spanish.",
+        "options": [
+            "I love you",
+            "You love me",
+            "We love together",
+            "Love is with you"
+        ],
+        "answer": "I love you",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Spanish",
+        "question": "Identify the correct instrumental case of the Spanish noun \"canción\" (song).",
+        "options": [
+            "Canción por",
+            "Canción en",
+            "Canción con",
+            "Canción a"
+        ],
+        "answer": "Canción con",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the word \"amico\" into Italian.",
+        "options": [
+            "Friend",
+            "Enemy",
+            "Love",
+            "Family"
+        ],
+        "answer": "Friend",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Italian",
+        "question": "How do you say \"good morning\" in Italian?",
+        "options": [
+            "Ciao",
+            "Buonasera",
+            "Buongiorno",
+            "Arrivederci"
+        ],
+        "answer": "Buongiorno",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the word \"famiglia\" into Italian.",
+        "options": [
+            "Happiness",
+            "Sadness",
+            "Family",
+            "Fear"
+        ],
+        "answer": "Family",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Italian",
+        "question": "Complete the sentence: \"Io ____ a casa.\"",
+        "options": [
+            "sono",
+            "sarò",
+            "sto",
+            "starò"
+        ],
+        "answer": "sto",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Italian",
+        "question": "Which Italian word means \"studente\" in English?",
+        "options": [
+            "Teacher",
+            "Student",
+            "Doctor",
+            "Engineer"
+        ],
+        "answer": "Student",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 1
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the word \"casa\" into Italian.",
+        "options": [
+            "House",
+            "Car",
+            "Tree",
+            "School"
+        ],
+        "answer": "House",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Italian",
+        "question": "What is the Italian word for \"hello\"?",
+        "options": [
+            "Ciao",
+            "Arrivederci",
+            "Buonasera",
+            "Grazie"
+        ],
+        "answer": "Ciao",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the word \"sole\" into Italian.",
+        "options": [
+            "Moon",
+            "Sun",
+            "Star",
+            "Cloud"
+        ],
+        "answer": "Sun",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Italian",
+        "question": "What is the correct translation for \"buona notte\"?",
+        "options": [
+            "Good morning",
+            "Good night",
+            "Good afternoon",
+            "Goodbye"
+        ],
+        "answer": "Good night",
+        "difficulty": "Easy",
+        "difficultyLevel": 1,
+        "point": 1,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the phrase \"Mi chiamo Marco.\" into Italian.",
+        "options": [
+            "My name is Marco",
+            "I am Marco",
+            "Marco is my name",
+            "Marco, my name"
+        ],
+        "answer": "My name is Marco",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Italian",
+        "question": "What is the correct translation for \"Per favore\"?",
+        "options": [
+            "Hello",
+            "Thank you",
+            "Excuse me",
+            "Please"
+        ],
+        "answer": "Please",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 2
+    },
+    {
+        "language": "Italian",
+        "question": "How do you ask \"How are you?\" in Italian in a formal way?",
+        "options": [
+            "Come stai?",
+            "Come ti chiami?",
+            "Come sta lei?",
+            "Che ne dici?"
+        ],
+        "answer": "Come sta lei?",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Italian",
+        "question": "What is the correct translation for \"Grazie\"?",
+        "options": [
+            "Hello",
+            "Thank you",
+            "Excuse me",
+            "Please"
+        ],
+        "answer": "Thank you",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the word \"libro\" into Italian.",
+        "options": [
+            "Book",
+            "Table",
+            "Chair",
+            "Pen"
+        ],
+        "answer": "Book",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the phrase \"Non c'è problema\" into English.",
+        "options": [
+            "No problem",
+            "Big problem",
+            "Some problem",
+            "Many problems"
+        ],
+        "answer": "No problem",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Italian",
+        "question": "What is the correct translation for \"felice\"?",
+        "options": [
+            "Sad",
+            "Happy",
+            "Angry",
+            "Excited"
+        ],
+        "answer": "Happy",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Italian",
+        "question": "Complete the sentence: \"Lei ____ al cinema.\"",
+        "options": [
+            "andare",
+            "va",
+            "vado",
+            "andiamo"
+        ],
+        "answer": "va",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Italian",
+        "question": "Complete the sentence: \"Io ____ italiano.\"",
+        "options": [
+            "am",
+            "is",
+            "are",
+            "speak"
+        ],
+        "answer": "speak",
+        "difficulty": "Medium",
+        "difficultyLevel": 2,
+        "point": 3,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Italian",
+        "question": "What is the correct translation for \"eccellente\"?",
+        "options": [
+            "Great",
+            "Small",
+            "Beautiful",
+            "Sad"
+        ],
+        "answer": "Great",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 3
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the phrase \"Ti amo.\" into Italian.",
+        "options": [
+            "I love you",
+            "You love me",
+            "We love together",
+            "Love is with you"
+        ],
+        "answer": "I love you",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Italian",
+        "question": "Identify the correct instrumental case of the Italian noun \"canzone\" (song).",
+        "options": [
+            "Canzone per",
+            "Canzone in",
+            "Canzone con",
+            "Canzone a"
+        ],
+        "answer": "Canzone con",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 4
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the word \"molto\" into Italian.",
+        "options": [
+            "Very little",
+            "Very much",
+            "Very good",
+            "Very bad"
+        ],
+        "answer": "Very much",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Italian",
+        "question": "What is the synonym for the Italian word \"energetico\"?",
+        "options": [
+            "Dull",
+            "Energetic",
+            "Calm",
+            "Tired"
+        ],
+        "answer": "Energetic",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the phrase \"Il tuo cuore è molto grande.\" into Italian.",
+        "options": [
+            "Your heart is very big.",
+            "My heart is very big.",
+            "His heart is very big.",
+            "Her heart is very big."
+        ],
+        "answer": "Your heart is very big.",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    },
+    {
+        "language": "Italian",
+        "question": "Translate the word \"computer\" into Italian.",
+        "options": [
+            "Computer",
+            "Television",
+            "Radio",
+            "Telephone"
+        ],
+        "answer": "Computer",
+        "difficulty": "Hard",
+        "difficultyLevel":3,
+        "point": 5,
+        "excerciseNumber": 5
+    }
+]
