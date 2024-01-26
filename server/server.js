@@ -36,6 +36,9 @@ app.use(cors(corsOptions));
 
 await connectDB();
 
+app.use('/', (req, res)=>{
+  return res.json({status:true, message:"Deployed"})
+})
 //routes
 app.use('/api/auth', authRouter);
 
