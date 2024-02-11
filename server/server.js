@@ -9,6 +9,10 @@ import cookieParser from 'cookie-parser';
 import connectDB from "./config/dbConnection.js";
 
 import authRouter from './router/authRouter.js'
+import dashboardRouter from './router/dashboardRouter.js'
+import movieRouter from './router/movieRouter.js'
+import tvSeriesRouter from './router/tvseriesRouter.js'
+import bookmarkRouter from './router/bookmarkRouter.js'
 
 
 // setting up express server
@@ -24,7 +28,7 @@ app.use(morgan());
 app.disable('etag')
 
 //// setting up cors. Only allowed origin can make api request
-const allowedOrigins = ['https://client-language-quiz.onrender.com'];
+const allowedOrigins = ['http://localhost:5173'];
 const corsOptions = {
     credentials: true,
     origin: allowedOrigins,
@@ -36,12 +40,12 @@ app.use(cors(corsOptions));
 
 await connectDB();
 
-app.use('/', (req, res)=>{
-  return res.json({status:true, message:"Deployed"})
-})
 //routes
 app.use('/api/auth', authRouter);
-
+app.use('/api/dashboard', dashboardRouter);
+app.use('/api/movie', movieRouter);
+app.use('/api/tv-series', tvSeriesRouter);
+app.use('/api/bookmark', bookmarkRouter);
 
 const port = process.env.PORT || 8000;
 

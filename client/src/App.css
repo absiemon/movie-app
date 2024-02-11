@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Nunito:wght@300&family=Poppins:wght@300&display=swap');
+
+:root{
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #10141E !important;
+  color: #FFFFFF;
+}
+
+input[type=text], select {
+  width: 100%;
+  height: 50px;
+  background-color: #161D2F;
+  display: inline-block;
+  border-radius: 4px;
+  outline: none;
+}
+input[type=text]::placeholder {
+  color: #5A698F;
+  font-size: 14px;
+}
+
+
+/* MUI CSS OVERRIDE */
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+  background-color: #161D2F !important;
+  width: 100% !important;
+}
+
+.css-e4w4as-MuiFormLabel-root-MuiInputLabel-root{
+  color: #5A698F !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+}
+.css-batk84-MuiInputBase-root-MuiFilledInput-root{
+  border-bottom: 1px solid #5A698F !important;
+
+}
+
+.css-batk84-MuiInputBase-root-MuiFilledInput-root::after{
+  border-bottom: 0px solid #5A698F !important;
+}
+.css-o943dk-MuiFormLabel-root-MuiInputLabel-root.Mui-focused{
+  color: #5A698F !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 11px !important;
+}
+
+.css-10botns-MuiInputBase-input-MuiFilledInput-input{
+  color: #FFFFFF !important;
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #161D2F !important;
+}
+
+.css-o943dk-MuiFormLabel-root-MuiInputLabel-root{
+  color: #5A698F !important;
+  font-family: 'Poppins', sans-serif !important;
+
+}
+
+.css-1tw7cpj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root{
+  background-color: #FC4747 !important;
+  color: #FFFFFF !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px !important;
+  width: 95%;
+  text-transform: none !important;
+  margin-top: 40px !important;
+  margin-bottom: 30px !important;
+  height: 50px !important;
+  margin-left: 10px !important;
+}
+
+.css-pkvtmb-MuiLoadingButton-loadingIndicator{
+  position: relative !important;
+}
+
+.css-1tw7cpj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root:hover{
+  background-color: #FFFFFF !important;
+  color: black !important;
+}
+
+.css-1tw7cpj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root.Mui-disabled{
+  background-color:#5A698F !important ;
+}

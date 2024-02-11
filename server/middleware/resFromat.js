@@ -1,9 +1,9 @@
-const genResponseFromat = (id, name, email, created_at, token) => {
+const genResponseFromat = (id, email, created_at, token) => {
     const obj = {
         status: true,
         content: {
             data: {
-                id, name, email, created_at
+                id, email, created_at
             }
         },
         meta: {
