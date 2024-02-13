@@ -16,11 +16,18 @@ interface AppContextType {
   setSnackbar: React.Dispatch<React.SetStateAction<snackbarType>>; 
   snackbar: snackbarType;
   handleClose: any;
-  setSearchQuery: React.Dispatch<React.SetStateAction<string>>; 
-  setIsSearching: React.Dispatch<React.SetStateAction<boolean>>; 
-  searchQuery: string;
-  isSearching: boolean;
+
   createBookmark: any;
+  removeBookmark: any;
+  fetchBookmark: any;
+  movies: any; 
+  setMovies: React.Dispatch<React.SetStateAction<any>>; 
+  tvSeries: any; 
+  setTvSeries: React.Dispatch<React.SetStateAction<any>>; 
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>; 
+  pageNo: number; 
+  setPageNo: React.Dispatch<React.SetStateAction<number>>; 
 }
 
 
@@ -31,8 +38,14 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [isAppLoading, setisAppLoading] = useState(true)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState();
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [isSearching, setIsSearching] = useState<boolean>(false);
+
+  const [pageNo, setPageNo] = useState<number>(1)
+
+  //========States for bookmark page
+  const [movies, setMovies] = useState([])
+  const [tvSeries, setTvSeries] = useState([])
+  const [loading, setLoading] = useState<boolean>(true)
+  //========================================
 
   const navigate = useNavigate()
 
@@ -55,12 +68,28 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         setIsAuthenticated(true);
         setUser(res.data?.content?.data);
         setisAppLoading(false);
-        // navigate('/home')
+        navigate('/home')
       })
       .catch((err) => {
         setisAppLoading(false);
         navigate("/");
       });
+  }
+
+  const fetchBookmark = async(search="")=>{
+
+    await axios.get(`/bookmark/get?search=${search}`)
+    .then((response) => {
+      setMovies(response.data?.data?.movie)
+      setTvSeries(response.data?.data?.tv)
+      setLoading(false)
+    })
+    .catch((err)=>{
+      setLoading(false)
+      setSnackbar((prev) => {
+        return { ...prev, open: true, message: "Error occurred" };
+      });
+    })
   }
 
   const createBookmark = async(videoInfo: any, bookmark_type: string)=>{
@@ -69,6 +98,21 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     .then(()=>{
       setSnackbar((prev) => {
         return { ...prev, open: true, message: "Bookmarked successfully" };
+      });
+    })
+    .catch((err)=>{
+      setSnackbar((prev) => {
+        return { ...prev, open: true, message: "Error occurred" };
+      });
+    })
+  }
+
+  const removeBookmark = async(bookmarkId: any)=>{
+
+    await axios.delete(`/bookmark/delete?bookmarkId=${bookmarkId}`)
+    .then(()=>{
+      setSnackbar((prev) => {
+        return { ...prev, open: true, message: "Bookmark deleted successfully" };
       });
     })
     .catch((err)=>{
@@ -90,9 +134,14 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         user, setUser,
         snackbar, setSnackbar, handleClose,
         isAppLoading, setisAppLoading,
-        searchQuery, setSearchQuery,
-        isSearching, setIsSearching,
-        createBookmark
+
+        createBookmark,
+        removeBookmark,
+        fetchBookmark,
+        movies, setMovies,
+        tvSeries, setTvSeries,
+        loading, setLoading,
+        pageNo, setPageNo
       }}
     >
       {children}

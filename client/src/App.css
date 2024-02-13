@@ -21,6 +21,22 @@ input[type=text]::placeholder {
   font-size: 14px;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+  ::-webkit-scrollbar-track {
+  background: #10141E; 
+}
+  ::-webkit-scrollbar-thumb {
+  background: #5A698F; 
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  
+  background: #555; 
+} 
+
+
 
 /* MUI CSS OVERRIDE */
 
@@ -52,6 +68,7 @@ input[type=text]::placeholder {
   color: #FFFFFF !important;
   font-family: 'Poppins', sans-serif !important;
   background-color: #161D2F !important;
+  height: 30px !important;
 }
 
 .css-o943dk-MuiFormLabel-root-MuiInputLabel-root{
@@ -84,4 +101,35 @@ input[type=text]::placeholder {
 
 .css-1tw7cpj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root.Mui-disabled{
   background-color:#5A698F !important ;
+}
+
+.css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root{
+  font-size: 20px !important;
+  padding: 24px 20px !important;
+  border-radius:200px !important;
+  color: white !important;
+  border: 1px solid #5A698F !important;
+}
+
+.css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root:hover{
+  background-color: #161D2F !important;
+}
+
+.css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+  background-color: #161D2F !important;
+}
+
+.css-1v2lvtn-MuiPaginationItem-root{
+  color: white !important;
+  font-size: 20px !important;
+
+}
+
+
+@media  screen and (max-width:700px) {
+  .css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root{
+    font-size: 12px !important;
+    padding: 18px 15px !important;
+    border-radius:200px !important;
+  }
 }

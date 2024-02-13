@@ -4,37 +4,45 @@ import VideoCard from '../components/reusable/videoCard';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import SkeletonLoader from '../components/reusable/SkeletonLoader';
+import PaginationComponent from '../components/reusable/Pagination';
+import NothingToShow from '../components/reusable/NothingToShow';
 
 function MoviePage() {
-  const { setSnackbar, searchQuery, setSearchQuery, isSearching, setIsSearching } = useContext(AppContext)
+  const { setSnackbar } = useContext(AppContext)
   const navigate = useNavigate()
 
   const [allMovies, setAllMovies] = useState<any>([])
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(true)
+  const [count, setCount] = useState<number>(1)
+
+  //===================States for searching and pagination 
+  const [searchQuery, setSearchQuery] = useState<string>(""); //state for onChange of input box
+  const [pageNo, setPageNo] = useState<number>(1);
+  const [searchInput, setSearchInput] = useState<string>("");  //state for searching videos
+
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        setLoading(true)
-        await axios.get(`/movie/get?search=${searchQuery}`)
+        await axios.get(`/movie/get?search=${searchQuery}&pageNo=${pageNo}`)
           .then((response) => {
-            setAllMovies(response.data?.data?.results)
+            setAllMovies(response.data?.results)
+            setCount(response.data?.total_pages)
             setLoading(false)
           })
       } catch (error) {
         setLoading(false)
+        setSnackbar((prev) => {
+          return { ...prev, open: true, message: "Error occurred" };
+        });
       }
     }
     fetchMovies()
-  }, [isSearching])
+  }, [searchInput, pageNo])
 
   const handleSearch = async () => {
-    if (searchQuery.length > 0) {
-      setIsSearching(true)
-    }
-    else {
-      setIsSearching(false);
-    }
+    setSearchInput(searchQuery)
   }
 
   return (
@@ -56,22 +64,33 @@ function MoviePage() {
 
       <section className=''>
         <h1 className='text-xl'>
-          {!isSearching? "Movies" : `Found ${allMovies?.length} results of ${searchQuery}`  }
+          {!searchInput ? "Movies" : `Found ${(allMovies.length || 1) * count} results for '${searchInput}'`}
         </h1>
-        <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
-          {allMovies && allMovies.map((movie, index) => {
-            return (
-              <VideoCard
-                imageUrl={movie?.poster_path}
-                title={movie?.original_title}
-                adult={movie?.adult}
-                id={movie?.id}
-                videoType="movie"
-                releaseDate={movie?.release_date}
-              />
-            )
-          })}
-        </div>
+        {!loading ?
+
+          allMovies.length > 0 ?
+            <>
+              <div className='xs:flex xs:flex-col xs:items-center sm:grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
+                {allMovies && allMovies.map((movie, index) => {
+                  return (
+                    <VideoCard
+                      imageUrl={movie?.poster_path}
+                      title={movie?.original_title}
+                      adult={movie?.adult}
+                      id={movie?.id}
+                      videoType="movie"
+                      releaseDate={movie?.release_date}
+                    />
+                  )
+                })}
+              </div>
+              <PaginationComponent count={count} setPageNo={setPageNo} />
+            </>
+            :
+            <NothingToShow />
+          :
+          <SkeletonLoader />
+        }
       </section>
 
     </main>

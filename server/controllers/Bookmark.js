@@ -8,12 +8,11 @@ export const createBookmark = async(req, res)=>{
 
         //checking whether this video has already been saved or not. Bceause may be other user has already created this video and if he has then we just have to link the id to users bookmark
 
-        const videoData = await VideoModel.findOne({title: videoInfo.title})
+        const videoData = await VideoModel.findOne({videoId: videoInfo.id})
         let videoId;
         if(!videoData){
 
             //creating video document for movie/tv_series.
-            const poster_base_url = 'https://image.tmdb.org/t/p/w500';
             const dataToSave = {
                 videoId: videoInfo.id,
                 adult: videoInfo.adult || false,
@@ -31,10 +30,18 @@ export const createBookmark = async(req, res)=>{
         
         //getting the use from the request object after token validation through middleware
         const user = req.user;
-        const bookmark = new BookmarkModel({userId: user.id, bookmark_type, videoId});
-        bookmark.save();
 
-        return res.status(200).json({status: true, data: "Bookmark created successfully"});
+        //checking if the user has already bookmark that video or not
+        const data  = await BookmarkModel.findOne({videoId: videoId})
+        if(data){
+            return res.status(200).json({status: true, data: "Already bookmarked"});
+        }
+        else{
+            const bookmark = new BookmarkModel({userId: user.id, bookmark_type, videoId});
+            bookmark.save();
+    
+            return res.status(200).json({status: true, data: "Bookmark created successfully"});
+        }
 
     } catch (error) {
         res
@@ -46,6 +53,7 @@ export const createBookmark = async(req, res)=>{
 //Fetching bookmarks for a particular user
 
 export const getAllBookmarks = async(req, res)=>{
+    const {search} = req.query;
     try {
         //getting user info embedded by middleware in request object after token verification.
         const user = req.user;
@@ -66,7 +74,25 @@ export const getAllBookmarks = async(req, res)=>{
             }
         }
 
-        return res.status(200).json({status: true, data: newResponse});
+        //If length of search is greater than zero means we are seaching for a particular bookmark
+        if(search.length > 0){
+            const filteredMovies = newResponse?.movie.filter(
+                (movie) =>
+                  movie?.videoId?.title.toLowerCase().includes(search.toLowerCase())
+            );
+              const filteredTvSeries = newResponse?.tv.filter(
+                (series) =>
+                 series?.videoId?.title.toLowerCase().includes(search.toLowerCase())
+            );
+
+            //updating new Response with filtered videos
+            newResponse.movie = filteredMovies
+            newResponse.tv  = filteredTvSeries
+            return res.status(200).json({status: true, data: newResponse});
+        }
+        else{
+            return res.status(200).json({status: true, data: newResponse});
+        }
 
     } catch (error) {
         res

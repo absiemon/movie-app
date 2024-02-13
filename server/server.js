@@ -44,7 +44,7 @@ await connectDB();
 app.use('/api/auth', authRouter);
 app.use('/api/dashboard', dashboardRouter);
 app.use('/api/movie', movieRouter);
-app.use('/api/tv-series', tvSeriesRouter);
+app.use('/api/tv', tvSeriesRouter);
 app.use('/api/bookmark', bookmarkRouter);
 
 const port = process.env.PORT || 8000;

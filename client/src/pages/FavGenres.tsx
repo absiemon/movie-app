@@ -1,7 +1,7 @@
 import { Container } from '@mui/material'
 import React, { useContext, useEffect, useState } from 'react'
 import CheckIcon from '@mui/icons-material/Check';
-import axios from 'axios';
+import axios, {AxiosError} from 'axios';
 import { LoadingButton } from '@mui/lab';
 import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
@@ -28,10 +28,17 @@ function FavGenres() {
                 await axios.get('/dashboard/get/genres')
                     .then((response) => {
                         setAllGenres(response.data?.data?.genres)
+                        setSelectedGenres(response.data?.favGenres?.genres || [])
                         setLoading(false)
                     })
+                    .catch ((error: AxiosError)=>{
+                        setLoading(false)
+                        setSnackbar((prev) => {
+                            return { ...prev, open: true, message: error?.response?.data?.error };
+                        });
+                    }) 
             } catch (error) {
-                setLoading(false)
+                console.log(error)
             }
         }
         fetchGenres()
@@ -53,6 +60,9 @@ function FavGenres() {
         await axios.post('/dashboard/add/genres', selectedGenres)
         .then((res)=>{
             setButtonLoading(false)
+            setSnackbar((prev) => {
+                return { ...prev, open: true, message: "Favourite genres updated successfully" };
+            });
             navigate('/home')
 
         }).catch((err)=>{
@@ -62,6 +72,7 @@ function FavGenres() {
             });
         })
     }
+
     return (
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', pt: 5, pb: 5 }}>
 
@@ -71,15 +82,16 @@ function FavGenres() {
                     <br />
                     <span>Genres</span>
                 </h1>
-               {!loading ? <div className='grid bdsm:grid-cols-2 bdmd:grid-cols-3 gap-4 mt-4'>
-
+               {!loading ? 
+               
+               <div className='grid bdsm:grid-cols-2 bdmd:grid-cols-3 gap-4 mt-4'>
                     {allGenres && allGenres.map((elm) => {
                         return (
                             <div className='cursor-pointer bg-tertiary p-2 rounded-md flex justify-between' role='button'
-                                onClick={() => handleGenresClick(elm.id)}>
+                                onClick={() => handleGenresClick(elm?.id)}>
                                 <p>{elm?.name}</p>
                                 {
-                                    selectedGenres.includes(elm.id) ?
+                                    selectedGenres.includes(elm?.id) ?
                                         <CheckIcon sx={{ backgroundColor: '#161D2F', borderRadius: '20px', padding: '4px' }} />
                                         : null
                                 }
@@ -94,7 +106,7 @@ function FavGenres() {
                     loadingPosition="start"
                     onClick={handleAddToFav}
                     loading={buttonLoading}
-                    disabled={selectedGenres.length === 0}
+                    disabled={selectedGenres?.length === 0}
                 >
                     {!buttonLoading && "Add to favourite"}
                 </LoadingButton>

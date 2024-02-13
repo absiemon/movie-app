@@ -62,7 +62,7 @@ function Register({ setisLogin }: RegisterProps) {
             setUser(res.data?.content?.data);
             localStorage.setItem("token", res.data?.meta?.access_token);
             setLoading(false);
-            navigate("/home");
+            navigate("/fav-genres");
           })
           .catch(({response}) => {
             setLoading(false);

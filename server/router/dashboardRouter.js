@@ -9,6 +9,6 @@ router.get("/trendings", getAllTrendingVideos)
 router.get("/recommended", verifyToken, getRecommendedations)
 router.post("/add/genres", verifyToken, addFavouriteGenres)
 
-router.get('/get/genres', getAllGenres);
+router.get('/get/genres', verifyToken, getAllGenres);
 
 export default router;

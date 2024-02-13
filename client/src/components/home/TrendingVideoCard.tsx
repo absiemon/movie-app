@@ -18,7 +18,7 @@ interface VideoCardProps {
 
 function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:VideoCardProps ) {
 
-    const {createBookmark} = useContext(AppContext)
+    const {createBookmark, setSnackbar} = useContext(AppContext)
     const [isBookmarked, setIsBookmarked] = useState(false)
 
     const handleCreateBookMark = async()=>{
@@ -30,6 +30,11 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
         }
         await createBookmark(videoInfo, videoType)
         setIsBookmarked(true)
+    }
+    const handleRemoveBookmark = async()=>{
+        setSnackbar((prev) => {
+            return { ...prev, open: true, message: "Go to bookmark tab to remove." };
+        });
     }
     
     const navigate = useNavigate();
@@ -47,18 +52,20 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
             />
 
             <div className={`absolute top-3 right-3 bg-gray-600 bg-opacity-50  h-10 w-10 flex items-center justify-center rounded-full hover:bg-white cursor-pointer hover:text-black `} 
-            role='button'
-            onClick={handleCreateBookMark}
             >
                 {!isBookmarked ? 
-                    <BookmarkBorderIcon />
+                    <BookmarkBorderIcon onClick={handleCreateBookMark}/>
                     :
-                    <BookmarkIcon/>
+                    <BookmarkIcon onClick={handleRemoveBookmark}/>
                 }
             </div>
 
             <div
                 className='gap-2 absolute top-[70px] left-[90px] bg-white bg-opacity-30 p-2 rounded-full text-xl hidden cursor-pointer play-container'
+                role='button'
+                onClick={()=> 
+                    navigate(`/home/video/details?type=${videoType}&id=${id}`)
+                }
             >
                 <PlayCircleIcon sx={{ fontSize: '30px' }} />
                 <p>Play</p>

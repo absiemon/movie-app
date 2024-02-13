@@ -1,4 +1,6 @@
 import UserModel from "../models/UserModel.js";
+import axios from 'axios'
+const apiKey = process.env.TMDB_API_KEY
 
 //To be removed---------
 import fs from 'fs'
@@ -14,7 +16,6 @@ const allTrendingPath = path.join(__dirname, '..', 'data', 'trendings.json');
 //getting all trending videos(movies/tv_series)
 export const getAllTrendingVideos = async (req, res) => {
     try {
-
 
         //to be removed
         if (fs.existsSync(allTrendingPath)) {
@@ -36,30 +37,54 @@ export const getAllTrendingVideos = async (req, res) => {
 
 //Getting recommendation for a particular user
 export const getRecommendedations = async(req, res)=>{
+    const {pageNo, search} = req.query
+
     try {
-        //getting user info embedded by middleware in request object after token verification.
-        const user = req.user
-        //finding all favourite generas for a user
-        const userData = await UserModel.findById(user.id).select({genres: 1})
 
-        const allFavGenres = userData.genres;
-        //getting all movies based on generas
-        const movieData = await axios.get(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${allFavGenres.join(',')}`
-        );
+        //If search has length greater than zero means we are searching for a sepecific videos
+        if(search.length >= 0){
+            const response = await axios.get(
+                `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(search)}&include_adult=false&language=en-US&page=${pageNo}&api_key=${apiKey}`
+            );
+            return res.status(200).json(response.data);
+        }
+        else{
 
-        //getting all tv series based on generas
-        const tvSeriesData = await axios.get(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${allFavGenres.join(',')}`
-        );
+            //getting user info embedded by middleware in request object after token verification.
+            const user = req.user
+            //finding all favourite generas for a user
+            const userData = await UserModel.findById(user._id).select({genres: 1})
 
-        let allRecommnededVideos = [...movieData.data.results, ...tvSeriesData.data.results]
+            const allFavGenres = userData.genres;
+            console.log(allFavGenres.join(','))
 
-        //sorting videos based on their release date in ascending order
-        allRecommnededVideos.sort((a, b) => (a.release_date < b.release_date) ? 1 : -1)
-        
-        return res.status(200).json({status:true, data: allRecommnededVideos});
+            // //getting all movies based on generas
+            if(allFavGenres.length > 0){
+                console.log("here")
 
+                //getting all movies based on generas
+                const movieData = await axios.get(
+                    `https://api.themoviedb.org/3/discover/movie?include_adult=true&language=en&page=${pageNo}&sort_by=popularity.desc&with_genres=${allFavGenres.join(',')}&api_key=${apiKey}`
+                );
+                
+                
+                //getting all tv series based on generas
+                const tvSeriesData = await axios.get(
+                    `https://api.themoviedb.org/3/discover/tv?include_adult=true&language=en&page=${pageNo}&sort_by=popularity.desc&with_genres=${allFavGenres.join(',')}&api_key=${apiKey}`
+                );
+                
+                //Merging both tv series and movies
+                let allRecommnededVideos = [...movieData.data.results, ...tvSeriesData.data.results]
+                
+                //sorting videos based on their release date in ascending order
+                allRecommnededVideos.sort((a, b) => (a.popularity < b.popularity) ? 1 : -1)
+                
+                return res.status(200).json({status:true, data:allRecommnededVideos});
+            }
+            else{
+                return res.status(200).json([]);
+            }
+        }
     } catch (error) {
         res
         .status(500)
@@ -86,12 +111,14 @@ export const searchVideoByTitle = async (req, res) => {
 // add Favourite genres to particular user document
 
 export const addFavouriteGenres = async(req, res)=>{
-    const {genresList} = req.body
+    const genresList = req.body
     try {
         const user = req.user
+
         await UserModel.findByIdAndUpdate(
-            user.id,
-            {$push: {genres: {$each:genresList }}}
+            user._id,
+            {genres: genresList},
+            { new: true }
         )
         return res.status(200).json({status:true, data:"Favourite genres updated successfully"});
 
@@ -106,16 +133,25 @@ export const addFavouriteGenres = async(req, res)=>{
 //Function to get all genres so that user can select their favourite genres
 export const getAllGenres = async(req, res)=>{
     try {
+        //getting previous selected favourite genres from the user (this will be helpfull when we update our fav genres)
+        const user = req.user
+        //finding all favourite generas for a user
+        const favGenres = await UserModel.findById(user._id).select({genres: 1})
+
+        //===========to be removed=============
         if (fs.existsSync(allGenresPath)) {
             let genres = JSON.parse(fs.readFileSync(allGenresPath, 'utf-8'));
-            return res.status(200).json({status:true, data: genres});
+            return res.status(200).json({status:true, favGenres,  data: genres, });
         } 
+        //===========to be removed=============
+
         else {
             const response = await axios.get(
                 `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${apiKey}`
             );
-            return res.status(200).json(response.data);
+            return res.status(200).json({status:true, favGenres,  data: response.data });
         }
+
     } catch (error) {
         res
         .status(500)

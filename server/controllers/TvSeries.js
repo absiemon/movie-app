@@ -1,4 +1,5 @@
 const apiKey = process.env.TMDB_API_KEY;
+import axios from 'axios'
 
 //To be removed---------
 import fs from 'fs'
@@ -16,20 +17,20 @@ export const getAllTvSeries = async (req, res) => {
          //To be removed-------------
          if (fs.existsSync(allGenresPath)) {
             let genres = JSON.parse(fs.readFileSync(allGenresPath, 'utf-8'));
-            return res.status(200).json({status:true, data: genres});
+            return res.status(200).json(genres);
         } 
         //To be removed-------------
         
         if(search.length === 0){
 
             const response = await axios.get(
-                `https://api.themoviedb.org/3/discover/tv?include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&api_key=${apiKey}`
+                `https://api.themoviedb.org/3/discover/tv?include_adult=true&include_null_first_air_dates=false&language=en-US&page=${pageNo}&sort_by=popularity.desc&api_key=${apiKey}`
                 );
                 return res.status(200).json(response.data);
         }
         else{
             const response = await axios.get(
-                `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(search)}&include_adult=true&language=en-US&page=1&api_key=${apiKey}`
+                `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(search)}&include_adult=true&language=en-US&page=${pageNo}&api_key=${apiKey}`
             );
             return res.status(200).json(response.data);
         }
@@ -50,10 +51,10 @@ export const getSingleTvSeries = async (req, res) => {
         );
 
         const newResponse = response.data;
-        let casts = newResponse?.credits?.cast;
+        let relevantCasts = newResponse?.credits?.cast;
         const {credits, ...resWithoutCredits} = newResponse;
         
-        let finalResponse = {...resWithoutCredits, casts: casts}
+        let finalResponse = {...resWithoutCredits, casts: relevantCasts}
 
         return res.status(200).json(finalResponse);
     } catch (error) {
@@ -63,17 +64,17 @@ export const getSingleTvSeries = async (req, res) => {
     }
 };
 
-// getting tv series by its title (For searching)
-export const getSingleSeriesByTitle = async (req, res) => {
-    const { pageNo, title } = req.query;
-    try {
-        const response = await axios.get(
-            `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(title)}&include_adult=true&language=en-US&page=1&api_key=${apiKey}`
-        );
-        return res.status(200).json(response.data);
-    } catch (error) {
-        res
-            .status(500)
-            .json({ status: true, error: error, message: "Internal server error" });
-    }
-};
+// // getting tv series by its title (For searching)
+// export const getSingleSeriesByTitle = async (req, res) => {
+//     const { pageNo, title } = req.query;
+//     try {
+//         const response = await axios.get(
+//             `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(title)}&include_adult=true&language=en-US&page=1&api_key=${apiKey}`
+//         );
+//         return res.status(200).json(response.data);
+//     } catch (error) {
+//         res
+//             .status(500)
+//             .json({ status: true, error: error, message: "Internal server error" });
+//     }
+// };
