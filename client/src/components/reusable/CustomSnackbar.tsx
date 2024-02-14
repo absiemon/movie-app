@@ -1,3 +1,4 @@
+//This component will show the popup on error and success state
 import { Snackbar } from "@mui/material";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";

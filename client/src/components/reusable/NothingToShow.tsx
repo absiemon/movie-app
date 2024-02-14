@@ -1,3 +1,4 @@
+//This component will show empty box if Nothing is present
 import box from '../../assets/box.png'
 
 function NothingToShow() {

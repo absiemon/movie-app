@@ -16,6 +16,7 @@ function sidebar() {
     const location = useLocation();
     const { pathname } = location;
 
+    //Function to handle logout
     const handleLogOut = () => {
         localStorage.removeItem('token')
         window.location.reload()

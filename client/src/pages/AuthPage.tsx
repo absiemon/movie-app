@@ -1,3 +1,4 @@
+//Page for Authentication
 import { Container } from '@mui/material'
 import { useContext, useEffect, useState } from 'react'
 import Register from '../components/auth/Register'
@@ -8,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 
 function AuthPage() {
   const {isAuthenticated} = useContext(AppContext)
+
+  //State for checking whether user is on login form or registration form
   const [isLogin, setisLogin] = useState<boolean>(true)
   const navigate = useNavigate()
 

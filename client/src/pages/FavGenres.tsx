@@ -1,3 +1,4 @@
+//Page to add and modify Favourite Genres
 import { Container } from '@mui/material'
 import { useContext, useEffect, useState } from 'react'
 import CheckIcon from '@mui/icons-material/Check';
@@ -7,6 +8,7 @@ import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../components/customLoader/Loader';
 
+//Definf the type of genres object
 interface allGenresType {
     name: string;
     id: number;
@@ -16,11 +18,19 @@ function FavGenres() {
     const { setSnackbar } = useContext(AppContext)
     const navigate = useNavigate()
 
+    //State for genres
     const [allGenres, setAllGenres] = useState<allGenresType[]>([])
+
+    //State for showing loader when all genres is being fetched from the server
     const [loading, setLoading] = useState<boolean>(false)
+
+    //State for showing loading icon when form is submitting
     const [buttonLoading, setButtonLoading] = useState<boolean>(false)
+
+    //State to store all selected genres
     const [selectedGenres, setSelectedGenres] = useState<number[]>([])
 
+    //Fetching all genres when page loads
     useEffect(() => {
         const fetchGenres = async () => {
             try {
@@ -44,6 +54,7 @@ function FavGenres() {
         fetchGenres()
     }, [])
 
+    //Function to handle genres selction and removal
     const handleGenresClick = (id: number) => {
         setSelectedGenres((prevGenres) => {
             const index = prevGenres?.indexOf(id);
@@ -55,6 +66,7 @@ function FavGenres() {
         });
     }
 
+    //Calling api to save all selected genres in database for a preticular user
     const handleAddToFav = async()=>{
         setButtonLoading(true)
         await axios.post('/dashboard/add/genres', selectedGenres)

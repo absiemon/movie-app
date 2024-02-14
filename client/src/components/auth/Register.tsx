@@ -1,3 +1,4 @@
+// This Component serves the Registration form 
 import React, { useContext, useState } from 'react'
 import { TextField } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -5,9 +6,12 @@ import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 
+//Defining the type of props that he can accept
 interface RegisterProps {
     setisLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+//Defining the type event object of input type text
 interface EventType {
     InputEvent: React.ChangeEvent<HTMLInputElement>;
 }
@@ -17,16 +21,20 @@ function Register({ setisLogin }: RegisterProps) {
   const { setUser, setIsAuthenticated, setSnackbar } = useContext(AppContext)
   const navigate = useNavigate()
 
+  //Defining the state for error handling 
     const [error, setError] = useState({
         emailError: false,
         passwordError: false,
         repeatPassError: false,
     });
+
+    //Defining the state for inputs
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [repeatPass, setRepeatPass] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
 
+    //Funtion to handle registration after all input validation
     const handleRegister = (event: React.FormEvent) => {
         event.preventDefault();
         if (!email && !password) {
@@ -72,7 +80,7 @@ function Register({ setisLogin }: RegisterProps) {
           });
     };
 
-
+    // Single function to handles input change of all input
     const handleChange = (e: EventType[`InputEvent`], field: string) => {
         const text = e.target.value;
         const newField = field + "Error";
@@ -86,6 +94,7 @@ function Register({ setisLogin }: RegisterProps) {
         else if (field === "password") setPassword(text);
         else if (field === "repeatPass") setRepeatPass(text);
     };
+
     return (
         <main className='bg-secondary shadow-xl md:w-[60%] bdmd:w-[40%] py-2 px-4 rounded-xl'>
             <h1 className='text-2xl text-center mt-[10px]'>Sign Up</h1>

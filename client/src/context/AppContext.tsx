@@ -7,6 +7,7 @@ interface AppProviderProps {
   children: ReactNode;
 }
 
+//Defing the type of all its export items
 interface AppContextType {
   isAppLoading: boolean;
   setisAppLoading: Dispatch<SetStateAction<boolean>>;
@@ -37,10 +38,16 @@ export const AppContext = createContext<AppContextType>({} as AppContextType);
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
+  //State to track app status 
   const [isAppLoading, setisAppLoading] = useState(true)
+
+  //State to check user status whether authenticated or not
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  //State to set the use details
   const [user, setUser] = useState<userType | undefined>(undefined);
 
+  //State for pagination
   const [pageNo, setPageNo] = useState<number>(1)
 
   //========States for bookmark page
@@ -63,6 +70,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     });
   };
 
+  //Function to fetch user profile on each page refreash
   const fetchProfile = async()=>{
     axios
       .get("/auth/me")
@@ -78,6 +86,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       });
   }
 
+  //Function to fetch all bookmarks including tv series and movies for a particular user
   const fetchBookmark = async(search="")=>{
 
     await axios.get(`/bookmark/get?search=${search}`)
@@ -94,6 +103,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     })
   }
 
+  //Function to create bookmark after clicking on bookmark icon for a particular user
   const createBookmark = async(videoInfo: any, bookmark_type: string)=>{
 
     await axios.post('/bookmark/create', {videoInfo, bookmark_type})
@@ -109,6 +119,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     })
   }
 
+  //Function to remove from the bookmark of a particular user
   const removeBookmark = async(bookmarkId: any)=>{
 
     await axios.delete(`/bookmark/delete?bookmarkId=${bookmarkId}`)

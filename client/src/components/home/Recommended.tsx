@@ -1,3 +1,4 @@
+//This component will show all recommended videos
 import { useEffect, useState } from 'react'
 import VideoCard from '../reusable/VideoCard';
 import axios from 'axios';
@@ -6,6 +7,7 @@ import PaginationComponent from '../reusable/Pagination';
 import NothingToShow from '../reusable/NothingToShow';
 import {VideoType} from '../../types/types'
 
+//Defining the type of props that he can accept
 interface propType {
     searchInput: string;
     searchQuery: string;
@@ -13,14 +15,16 @@ interface propType {
 
 function Recommended({ searchInput, searchQuery }: propType) {
 
+    //Defining the state for videos which needs to show in recommended section
     const [allVideos, setAllVideos] = useState<VideoType[]>([])
     const [loading, setLoading] = useState<boolean>(false)
+
+    //State for pagination
     const [count, setCount] = useState<number>(1)
+    const [pageNo, setPageNo] = useState<number>(1)
 
-
-    const [pageNo, setPageNo] = useState<number>(1) //State for pagination
-
-
+    //Fetching all the recommended videos on component mount
+    //This user effect will run whenever change in pageNo and searchInput
     useEffect(() => {
         const fetchMovies = async () => {
             try {

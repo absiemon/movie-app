@@ -1,3 +1,5 @@
+//This Page will show all the movies fetched from the server
+
 import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import VideoCard from '../components/reusable/VideoCard';
@@ -11,16 +13,22 @@ import {VideoType} from '../types/types'
 function MoviePage() {
   const { setSnackbar } = useContext(AppContext)
 
+  //State to store all the movies fetched from the server
   const [allMovies, setAllMovies] = useState<VideoType[]>([])
-  const [loading, setLoading] = useState<boolean>(true)
-  const [count, setCount] = useState<number>(1)
 
+  //State to show Skeleton loader when data is being fetched from the server
+  const [loading, setLoading] = useState<boolean>(true)
+
+  
   //===================States for searching and pagination 
   const [searchQuery, setSearchQuery] = useState<string>(""); //state for onChange of input box
   const [pageNo, setPageNo] = useState<number>(1);
+  const [count, setCount] = useState<number>(1)
+
   const [searchInput, setSearchInput] = useState<string>("");  //state for searching videos
 
 
+  //Fetching all the movies when page loads
   useEffect(() => {
     const fetchMovies = async () => {
       try {

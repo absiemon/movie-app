@@ -1,3 +1,4 @@
+//Page to show all bookmarks including tv series and movies
 import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import VideoCard from '../components/reusable/VideoCard';
@@ -14,6 +15,7 @@ function BookmarkPage() {
   const [searchQuery, setSearchQuery] = useState<string>(""); //state for onChange of input box
   const [searchInput, setSearchInput] = useState<string>("");  //state for searching videos
 
+  //Fethcing all bookmars when page loads
   useEffect(() => {
     fetchBookmark(searchInput)
   }, [searchInput])

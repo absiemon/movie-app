@@ -1,3 +1,5 @@
+//This script defines all the necessary types 
+
 import { ObjectId } from 'mongodb';
 
 export type userType = {

@@ -1,5 +1,6 @@
-import './Loader.css'; // Make sure to import the CSS file
+//This Component is for showing loader when app is loading
 import MovieCreationIcon from '@mui/icons-material/MovieCreation';
+import './Loader.css'; 
 
 //Coponent to create a custome Loader
 const Loader = () => {

@@ -1,6 +1,8 @@
+//Component for pagination functionality
 import React from 'react'
 import { Pagination } from '@mui/material';
 
+//Defing the type of props that component can accept
 interface propType{
     count: number;
     setPageNo: React.Dispatch<React.SetStateAction<number>>;
@@ -8,7 +10,6 @@ interface propType{
 
 function PaginationComponent({count, setPageNo}:propType) {
 
-    // const {setPageNo} = useContext(AppContext)
     const handleChange = (_event: React.ChangeEvent<unknown>, page: number) => {
         setPageNo(page)
     };

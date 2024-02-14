@@ -1,3 +1,4 @@
+// This Component serves the login form 
 import React, { useContext, useState } from 'react'
 import { TextField } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -5,10 +6,12 @@ import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+//Defining the type of props that he can accept
 interface LoginProps {
   setisLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+//Defining the type event object of input type text
 interface EventType {
   InputEvent: React.ChangeEvent<HTMLInputElement>;
 }
@@ -17,14 +20,18 @@ function Login({ setisLogin }: LoginProps) {
   const { setUser, setIsAuthenticated, setSnackbar } = useContext(AppContext)
   const navigate = useNavigate()
 
+  //Defining the state for error handling 
   const [error, setError] = useState({
     emailError: false,
     passwordError: false,
   });
+
+  //Defining the state for inputs
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
+  //Funtion to handle login after all input validation
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
     if (!email && !password) {
@@ -65,6 +72,7 @@ function Login({ setisLogin }: LoginProps) {
   };
 
 
+  // Single function to handles input change of both input
   const handleChange = (e: EventType[`InputEvent`], field: string) => {
     const text = e.target.value;
     const newField = field + "Error";

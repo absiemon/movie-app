@@ -1,3 +1,4 @@
+//This component is to show trending videos on the home page
 import { useEffect, useRef, useState } from 'react'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -8,11 +9,15 @@ import SkeletonLoader from '../reusable/SkeletonLoader';
 import {TrendingVideoType} from '../../types/types'
 
 function TrendingBox() {
+
+    //state for trending videos
     const [trendings, setTrendings] = useState<TrendingVideoType[]>([]);
     const [loading, setLoading] = useState<boolean>(true)
 
+    //This ref helps to scroll the content which is in Trending box 
     const scrollerRef = useRef<HTMLDivElement | null>(null);
 
+    //Functions to scroll the items in Trending box right and left on right, left icon click
     const scrollLeft = () => {
         if (scrollerRef.current) {
             scrollerRef.current.scrollTo({
@@ -32,6 +37,7 @@ function TrendingBox() {
     };
 
 
+    //Fetching all the trending videos on component mount
     useEffect(() => {
         axios.get(`/dashboard/trendings`)
             .then((response) => {

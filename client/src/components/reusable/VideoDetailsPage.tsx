@@ -1,9 +1,12 @@
+//This component will show all the details of a particular video.
+
 import axios from 'axios';
 import  { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { VideoDetailsType } from '../../types/types';
 
+//Defing the type of query params. I am adding videoId and type in the url on clicking on a particuler video to show its detail
 interface queryParamsType {
   type?: string;
   id?: number;
@@ -14,12 +17,17 @@ function VideoDetailsPage() {
   const { setSnackbar} = useContext(AppContext)
 
   const { search } = useLocation()
+
+  //Defing the state for the Video
   const [videoInfo, setVideoInfo] = useState<VideoDetailsType>()
   const [_loading, setLoading] = useState<boolean>(false)
+
+  //State to set the query params which is embedded in the url
   const [params, setParams] = useState<queryParamsType>()
 
+  //Getting the values (videoId and type) from the url and calling api to fetch 
+  //details of a particular video
   useEffect(() => {
-
     setLoading(true)
 
     const queryParams = new URLSearchParams(search);

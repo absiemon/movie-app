@@ -1,3 +1,4 @@
+//This page is for showing all treading videos and Recommended videos
 import SearchIcon from '@mui/icons-material/Search';
 import TrendingBox from '../components/home/TrendingBox';
 import Recommended from '../components/home/Recommended';

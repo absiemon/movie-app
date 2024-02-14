@@ -1,4 +1,5 @@
 
+// This component will serve all the routes 
 import { useRoutes } from 'react-router-dom';
 import HomePage from '../pages/HomePage'
 import AuthPage from '../pages/AuthPage'
@@ -9,7 +10,7 @@ import MoviePage from '../pages/MoviePage';
 import TVSeriesPage from '../pages/TvSeriesPage';
 import VideoDetailsPage from '../components/reusable/VideoDetailsPage';
 import BookmarkPage from '../pages/BookmarkPage';
-import AuthGuard from '../components/auth/AuthGuard';
+import AuthGuard from '../components/auth/AuthGuard';  // This Component will ensure that only logged in user access the protected routes
 
 export default function Routes() {
     return useRoutes([

@@ -1,3 +1,5 @@
+//This component is for showing Trending video in card
+
 import { useContext, useState } from 'react'
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
@@ -6,6 +8,7 @@ import '../reusable/reusable.css'
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 
+//Defining the types of propes that component can accept
 interface VideoCardProps {
     imageUrl: string;
     title?: string;
@@ -15,12 +18,13 @@ interface VideoCardProps {
     releaseDate?: string;
 }
   
-
 function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:VideoCardProps ) {
 
     const {createBookmark, setSnackbar} = useContext(AppContext)
+    //state to check whether the current trending video has been bookmarked or not
     const [isBookmarked, setIsBookmarked] = useState(false)
 
+    //Function to create a bookmark
     const handleCreateBookMark = async()=>{
         const videoInfo = {
             title, 
@@ -31,6 +35,9 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
         await createBookmark(videoInfo, videoType)
         setIsBookmarked(true)
     }
+
+    //Function to remove bookmark. Remember we need to go to bookmark page to remove the bookmark
+    //because the bookmark can only be removed with its mongodb _id
     const handleRemoveBookmark = async()=>{
         setSnackbar((prev) => {
             return { ...prev, open: true, message: "Go to bookmark tab to remove." };
