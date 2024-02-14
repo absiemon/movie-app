@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import VideoCard from '../components/reusable/videoCard';
+import VideoCard from '../components/reusable/VideoCard';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
-import { useNavigate } from 'react-router-dom';
 import SkeletonLoader from '../components/reusable/SkeletonLoader';
 import PaginationComponent from '../components/reusable/Pagination';
 import NothingToShow from '../components/reusable/NothingToShow';
+import {VideoType} from '../types/types'
 
 function TVSeriesPage() {
   const { setSnackbar } = useContext(AppContext)
-  const navigate = useNavigate()
 
-  const [allTvSeries, setTvSeries] = useState<any>([])
+  const [allTvSeries, setTvSeries] = useState<VideoType[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [count, setCount] = useState<number>(1)
 
@@ -71,7 +70,7 @@ function TVSeriesPage() {
           allTvSeries.length > 0 ?
             <>
               <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
-                {allTvSeries && allTvSeries.map((series, index) => {
+                {allTvSeries && allTvSeries.map((series, _index) => {
                   return (
                     <VideoCard
                       imageUrl={series?.poster_path}

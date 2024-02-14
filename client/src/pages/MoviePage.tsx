@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import VideoCard from '../components/reusable/videoCard';
+import VideoCard from '../components/reusable/VideoCard';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
-import { useNavigate } from 'react-router-dom';
 import SkeletonLoader from '../components/reusable/SkeletonLoader';
 import PaginationComponent from '../components/reusable/Pagination';
 import NothingToShow from '../components/reusable/NothingToShow';
+import {VideoType} from '../types/types'
 
 function MoviePage() {
   const { setSnackbar } = useContext(AppContext)
-  const navigate = useNavigate()
 
-  const [allMovies, setAllMovies] = useState<any>([])
+  const [allMovies, setAllMovies] = useState<VideoType[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [count, setCount] = useState<number>(1)
 
@@ -71,7 +70,7 @@ function MoviePage() {
           allMovies.length > 0 ?
             <>
               <div className='xs:flex xs:flex-col xs:items-center sm:grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
-                {allMovies && allMovies.map((movie, index) => {
+                {allMovies && allMovies.map((movie, _index) => {
                   return (
                     <VideoCard
                       imageUrl={movie?.poster_path}
