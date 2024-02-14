@@ -1,5 +1,5 @@
-import { createContext, useState, ReactNode, useLayoutEffect } from "react";
-import {userType, snackbarType} from '../types/types'
+import { ReactNode, useState, useLayoutEffect, createContext, Dispatch, SetStateAction } from 'react';
+import {userType, snackbarType, bookmarkVideoType} from '../types/types'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -8,26 +8,28 @@ interface AppProviderProps {
 }
 
 interface AppContextType {
-  isAuthenticated: boolean;
   isAppLoading: boolean;
-  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
-  setUser: React.Dispatch<React.SetStateAction<userType>>; 
-  user: userType;
-  setSnackbar: React.Dispatch<React.SetStateAction<snackbarType>>; 
+  setisAppLoading: Dispatch<SetStateAction<boolean>>;
+  isAuthenticated: boolean;
+  setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
+  user: userType | undefined;
+  setUser: Dispatch<SetStateAction<userType | undefined>>; 
   snackbar: snackbarType;
-  handleClose: any;
+  setSnackbar: Dispatch<SetStateAction<snackbarType>>; 
 
+  handleClose: any;
   createBookmark: any;
   removeBookmark: any;
   fetchBookmark: any;
-  movies: any; 
-  setMovies: React.Dispatch<React.SetStateAction<any>>; 
-  tvSeries: any; 
-  setTvSeries: React.Dispatch<React.SetStateAction<any>>; 
+
+  movies: bookmarkVideoType[]; 
+  setMovies: Dispatch<SetStateAction<bookmarkVideoType[]>>; 
+  tvSeries: bookmarkVideoType[]; 
+  setTvSeries: Dispatch<SetStateAction<bookmarkVideoType[]>>; 
   loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>; 
+  setLoading: Dispatch<SetStateAction<boolean>>; 
   pageNo: number; 
-  setPageNo: React.Dispatch<React.SetStateAction<number>>; 
+  setPageNo: Dispatch<SetStateAction<number>>; 
 }
 
 
@@ -37,13 +39,13 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
   const [isAppLoading, setisAppLoading] = useState(true)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<userType | undefined>(undefined);
 
   const [pageNo, setPageNo] = useState<number>(1)
 
   //========States for bookmark page
-  const [movies, setMovies] = useState([])
-  const [tvSeries, setTvSeries] = useState([])
+  const [movies, setMovies] =  useState<bookmarkVideoType[]>([]);
+  const [tvSeries, setTvSeries] =  useState<bookmarkVideoType[]>([]);
   const [loading, setLoading] = useState<boolean>(true)
   //========================================
 
@@ -70,7 +72,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         setisAppLoading(false);
         navigate('/home')
       })
-      .catch((err) => {
+      .catch((_err) => {
         setisAppLoading(false);
         navigate("/");
       });
@@ -84,7 +86,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       setTvSeries(response.data?.data?.tv)
       setLoading(false)
     })
-    .catch((err)=>{
+    .catch((_err)=>{
       setLoading(false)
       setSnackbar((prev) => {
         return { ...prev, open: true, message: "Error occurred" };
@@ -100,7 +102,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         return { ...prev, open: true, message: "Bookmarked successfully" };
       });
     })
-    .catch((err)=>{
+    .catch((_err)=>{
       setSnackbar((prev) => {
         return { ...prev, open: true, message: "Error occurred" };
       });
@@ -115,7 +117,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         return { ...prev, open: true, message: "Bookmark deleted successfully" };
       });
     })
-    .catch((err)=>{
+    .catch((_err)=>{
       setSnackbar((prev) => {
         return { ...prev, open: true, message: "Error occurred" };
       });
@@ -134,7 +136,6 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         user, setUser,
         snackbar, setSnackbar, handleClose,
         isAppLoading, setisAppLoading,
-
         createBookmark,
         removeBookmark,
         fetchBookmark,

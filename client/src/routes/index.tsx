@@ -1,5 +1,4 @@
 
-import { lazy } from 'react';
 import { useRoutes } from 'react-router-dom';
 import HomePage from '../pages/HomePage'
 import AuthPage from '../pages/AuthPage'

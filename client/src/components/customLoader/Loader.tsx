@@ -1,4 +1,3 @@
-import React from 'react';
 import './Loader.css'; // Make sure to import the CSS file
 import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 

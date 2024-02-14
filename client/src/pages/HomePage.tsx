@@ -1,9 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search';
-import VideoCard from '../components/reusable/videoCard';
 import TrendingBox from '../components/home/TrendingBox';
 import Recommended from '../components/home/Recommended';
-import { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import { useState } from 'react';
 
 function HomePage() {
 
@@ -13,7 +11,7 @@ function HomePage() {
  
   const handleSearch = async () => {
     setSearchInput(searchQuery)
-}
+  }
 
   return (
     <main className='flex flex-col xs:w-[60vw] sm:w-[80vw] md:w-[88vw] gap-6'>

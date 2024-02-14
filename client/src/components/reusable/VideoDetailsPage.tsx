@@ -1,19 +1,21 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
+import  { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import { VideoDetailsType } from '../../types/types';
 
 interface queryParamsType {
-  type: string;
-  id: Number;
+  type?: string;
+  id?: number;
+  [key: string]: string | number | undefined;
 }
 
 function VideoDetailsPage() {
   const { setSnackbar} = useContext(AppContext)
 
   const { search } = useLocation()
-  const [videoInfo, setVideoInfo] = useState({})
-  const [loading, setLoading] = useState<boolean>(false)
+  const [videoInfo, setVideoInfo] = useState<VideoDetailsType>()
+  const [_loading, setLoading] = useState<boolean>(false)
   const [params, setParams] = useState<queryParamsType>()
 
   useEffect(() => {
@@ -32,7 +34,7 @@ function VideoDetailsPage() {
         .then((res) => {
           setVideoInfo(res.data)
         })
-        .catch((err) => {
+        .catch((_err) => {
           setSnackbar((prev) => {
             return { ...prev, open: true, message: "Error occurred" };
           });

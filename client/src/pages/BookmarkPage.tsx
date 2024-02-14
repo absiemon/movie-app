@@ -1,17 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import VideoCard from '../components/reusable/videoCard';
-import axios from 'axios';
+import VideoCard from '../components/reusable/VideoCard';
 import { AppContext } from '../context/AppContext';
-import { useNavigate } from 'react-router-dom';
 import SkeletonLoader from '../components/reusable/SkeletonLoader';
 import NothingToShow from '../components/reusable/NothingToShow';
 
 function BookmarkPage() {
   const {
-    setSnackbar,
-    fetchBookmark, movies, setMovies, tvSeries, setTvSeries,
-    loading, setLoading
+    fetchBookmark, movies, tvSeries,
+    loading
   } = useContext(AppContext)
 
   const [searchQuery, setSearchQuery] = useState<string>(""); //state for onChange of input box
@@ -50,7 +47,7 @@ function BookmarkPage() {
 
           movies.length > 0 ?
             <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
-              {movies && movies.map((movie, index) => {
+              {movies && movies.map((movie, _index) => {
                 return (
                   <VideoCard
                     imageUrl={movie?.videoId?.poster_path}
@@ -80,7 +77,7 @@ function BookmarkPage() {
 
           tvSeries.length > 0 ?
             <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
-              {tvSeries && tvSeries.map((series, index) => {
+              {tvSeries && tvSeries.map((series, _index) => {
                 return (
                   <VideoCard
                     imageUrl={series?.videoId?.poster_path}

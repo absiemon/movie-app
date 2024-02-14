@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useEffect, ReactNode, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';

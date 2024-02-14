@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import{ useContext } from 'react'
 import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import TheatersIcon from '@mui/icons-material/Theaters';
@@ -7,7 +7,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Avatar, Tooltip } from '@mui/material';
 import { AppContext } from '../context/AppContext';
 

@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import VideoCard from '../reusable/VideoCard';
 import axios from 'axios';
-import { AppContext } from '../../context/AppContext';
 import SkeletonLoader from '../reusable/SkeletonLoader';
 import PaginationComponent from '../reusable/Pagination';
 import NothingToShow from '../reusable/NothingToShow';
+import {VideoType} from '../../types/types'
 
 interface propType {
     searchInput: string;
@@ -13,7 +13,7 @@ interface propType {
 
 function Recommended({ searchInput, searchQuery }: propType) {
 
-    const [allVideos, setAllVideos] = useState<any>([])
+    const [allVideos, setAllVideos] = useState<VideoType[]>([])
     const [loading, setLoading] = useState<boolean>(false)
     const [count, setCount] = useState<number>(1)
 
@@ -48,7 +48,7 @@ function Recommended({ searchInput, searchQuery }: propType) {
                 allVideos.length > 0 ?
                     <>
                         <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
-                            {allVideos && allVideos.map((video, index) => {
+                            {allVideos && allVideos.map((video) => {
                                 return (
                                     <VideoCard
                                         imageUrl={video?.poster_path}

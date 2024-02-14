@@ -8,11 +8,11 @@ import { AppContext } from '../../context/AppContext';
 
 interface VideoCardProps {
     imageUrl: string;
-    title: string;
-    adult: boolean;
-    id: number;
-    videoType: string;
-    releaseDate: string;
+    title?: string;
+    adult?: boolean;
+    id?: number;
+    videoType?: string;
+    releaseDate?: string;
 }
   
 
@@ -73,7 +73,7 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
 
 
             <div className='flex gap-7 text-sm mt-2 absolute bottom-[30px] left-[10px]'>
-                <p>{releaseDate.split('-')[0]}</p>
+                <p>{(releaseDate || "").split('-')[0]}</p>
                 <ul className='flex list-disc gap-6'>
                     <li>{videoType}</li>
                     <li>{adult ? '18+' : 'PG'}</li>
@@ -81,7 +81,7 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
             </div>
             <h1 className='absolute bottom-[5px] left-[10px] font-semibold'>
                 {
-                    title.slice(0, 20)
+                    (title || "").slice(0, 20)
                 }
             </h1>
 

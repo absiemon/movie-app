@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useState } from 'react'
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
@@ -8,11 +8,11 @@ import { AppContext } from '../../context/AppContext';
 
 interface VideoCardProps {
     imageUrl: string;
-    title: string;
-    adult: boolean;
-    id: number;
+    title?: string;
+    adult?: boolean;
+    id?: number;
     videoType: string;
-    releaseDate: string;
+    releaseDate?: string;
     bookmark?:boolean;
     bookmarkId?:any;
 }

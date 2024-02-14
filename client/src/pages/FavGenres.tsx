@@ -1,7 +1,7 @@
 import { Container } from '@mui/material'
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import CheckIcon from '@mui/icons-material/Check';
-import axios, {AxiosError} from 'axios';
+import axios from 'axios';
 import { LoadingButton } from '@mui/lab';
 import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
@@ -31,10 +31,10 @@ function FavGenres() {
                         setSelectedGenres(response.data?.favGenres?.genres || [])
                         setLoading(false)
                     })
-                    .catch ((error: AxiosError)=>{
+                    .catch (()=>{
                         setLoading(false)
                         setSnackbar((prev) => {
-                            return { ...prev, open: true, message: error?.response?.data?.error };
+                            return { ...prev, open: true, message: "Some error occured" };
                         });
                     }) 
             } catch (error) {
@@ -58,14 +58,14 @@ function FavGenres() {
     const handleAddToFav = async()=>{
         setButtonLoading(true)
         await axios.post('/dashboard/add/genres', selectedGenres)
-        .then((res)=>{
+        .then(()=>{
             setButtonLoading(false)
             setSnackbar((prev) => {
                 return { ...prev, open: true, message: "Favourite genres updated successfully" };
             });
             navigate('/home')
 
-        }).catch((err)=>{
+        }).catch(()=>{
             setButtonLoading(false)
             setSnackbar((prev) => {
                 return { ...prev, open: true, message: "Some error occured" };

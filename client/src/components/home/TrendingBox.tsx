@@ -5,12 +5,13 @@ import axios from 'axios';
 import TrendingVideoCard from './TrendingVideoCard';
 import '../reusable/reusable.css'
 import SkeletonLoader from '../reusable/SkeletonLoader';
+import {TrendingVideoType} from '../../types/types'
 
 function TrendingBox() {
-    const [trendings, setTrendings] = useState([]);
+    const [trendings, setTrendings] = useState<TrendingVideoType[]>([]);
     const [loading, setLoading] = useState<boolean>(true)
 
-    const scrollerRef = useRef(null);
+    const scrollerRef = useRef<HTMLDivElement | null>(null);
 
     const scrollLeft = () => {
         if (scrollerRef.current) {
@@ -36,9 +37,8 @@ function TrendingBox() {
             .then((response) => {
                 setTrendings(response.data?.results)
                 setLoading(false)
-            }).catch((err) => {
+            }).catch(() => {
                 setLoading(false)
-
             })
     }, [])
 
@@ -60,35 +60,30 @@ function TrendingBox() {
                     </p>
                 </div>
 
-                {/* {!loading ? */}
-                    <section className='flex gap-10 w-[100%] overflow-x-scroll' ref={scrollerRef}>
-                        {trendings?.map((video, index) => {
-                            return (
-                                <div >
-
-                                    <TrendingVideoCard
-                                        imageUrl={video?.poster_path}
-                                        title={
-                                            video?.media_type === 'movie'
-                                                ? video?.title
-                                                : video?.original_name
-                                        }
-                                        adult={video?.adult}
-                                        id={video?.id}
-                                        videoType={video?.media_type}
-                                        releaseDate={
-                                            video?.media_type === 'movie'
-                                                ? video?.release_date
-                                                : video?.first_air_date
-                                        }
-                                    />
-                                </div>
-                            )
-                        })}
-                    </section>
-                    {/* :
-                    <SkeletonLoader count={4} />
-                } */}
+                <section className='flex gap-10 w-[100%] overflow-x-scroll' ref={scrollerRef}>
+                    {trendings?.map((video) => {
+                        return (
+                            <div >
+                                <TrendingVideoCard
+                                    imageUrl={video?.poster_path || ""}
+                                    title={
+                                        video?.media_type === 'movie'
+                                            ? video?.title
+                                            : video?.original_name
+                                    }
+                                    adult={video?.adult}
+                                    id={video?.id}
+                                    videoType={video?.media_type}
+                                    releaseDate={
+                                        video?.media_type === 'movie'
+                                            ? video?.release_date
+                                            : video?.first_air_date
+                                    }
+                                />
+                            </div>
+                        )
+                    })}
+                </section>
 
             </main >
                 :

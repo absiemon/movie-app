@@ -1,5 +1,5 @@
 import { Snackbar } from "@mui/material";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 

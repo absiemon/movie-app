@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Pagination } from '@mui/material';
-import { AppContext } from '../../context/AppContext';
 
 interface propType{
     count: number;
@@ -10,7 +9,7 @@ interface propType{
 function PaginationComponent({count, setPageNo}:propType) {
 
     // const {setPageNo} = useContext(AppContext)
-    const handleChange = (event: React.ChangeEvent<unknown>, page: number) => {
+    const handleChange = (_event: React.ChangeEvent<unknown>, page: number) => {
         setPageNo(page)
     };
 
