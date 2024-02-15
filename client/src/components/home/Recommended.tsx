@@ -17,7 +17,7 @@ function Recommended({ searchInput, searchQuery }: propType) {
 
     //Defining the state for videos which needs to show in recommended section
     const [allVideos, setAllVideos] = useState<VideoType[]>([])
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
 
     //State for pagination
     const [count, setCount] = useState<number>(1)
@@ -28,7 +28,15 @@ function Recommended({ searchInput, searchQuery }: propType) {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                await axios.get(`/dashboard/recommended?search=${searchQuery}&pageNo=${pageNo}`)
+                const token = localStorage.getItem('token')
+                await axios.get(
+                    `/dashboard/recommended?search=${searchQuery}&pageNo=${pageNo}`,
+                    {
+                        headers:{
+                            Authorization: `Bearer ${token}`
+                        }
+                    }
+                    )
                     .then((response) => {
                         setAllVideos(response.data?.results)
                         setCount(response.data?.total_pages)

@@ -1,25 +1,25 @@
 import axios from 'axios'
 const apiKey = process.env.TMDB_API_KEY;
-//To be removed---------
-import fs from 'fs'
-import { fileURLToPath } from 'url';
-import path, { dirname } from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const allGenresPath = path.join(__dirname, '..', 'data', 'movies.json');
-//To be removed---------
+// //To be removed---------
+// import fs from 'fs'
+// import { fileURLToPath } from 'url';
+// import path, { dirname } from 'path';
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+// const allGenresPath = path.join(__dirname, '..', 'data', 'movies.json');
+// //To be removed---------
 
 //Getting all movies with pagination
 export const getAllMovies = async (req, res) => {
     const { search, pageNo } = req.query;
     try {
         
-        // //To be removed-------------
-        if (fs.existsSync(allGenresPath)) {
-            let genres = JSON.parse(fs.readFileSync(allGenresPath, 'utf-8'));
-            return res.status(200).json(genres);
-        } 
-        // //To be removed-------------
+        // // //To be removed-------------
+        // if (fs.existsSync(allGenresPath)) {
+        //     let genres = JSON.parse(fs.readFileSync(allGenresPath, 'utf-8'));
+        //     return res.status(200).json(genres);
+        // } 
+        // // //To be removed-------------
 
         if(search.length === 0){
             const response = await axios.get(
@@ -45,7 +45,6 @@ export const getAllMovies = async (req, res) => {
 export const getSingleMovie = async (req, res) => {
     const { movieId } = req.params;
     try {
-        console.log(apiKey)
 
         let response = await axios.get(
             `https://api.themoviedb.org/3/movie/${movieId}?append_to_response=casts&language=en-US&api_key=${apiKey}`

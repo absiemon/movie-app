@@ -48,6 +48,7 @@ function TVSeriesPage() {
   }, [searchInput, pageNo])
 
   const handleSearch = async () => {
+    setPageNo(1)
     setSearchInput(searchQuery)
   }
 

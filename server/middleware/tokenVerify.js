@@ -8,6 +8,7 @@ const verifyToken = (req, res, next)=>{
         return res.status(401).json({ error: 'Unauthorized. Token is missing.' });
     }
     try {
+
         jwt.verify(token, jwt_secret, {}, async (err, data) => {
             if (err) {
                 return res.status(498).json({ error: "Error in verifying token. Invalid token" });

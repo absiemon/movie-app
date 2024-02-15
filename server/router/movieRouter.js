@@ -2,7 +2,6 @@ import express from "express";
 import {getAllMovies, getSingleMovie} from '../controllers/Movies.js'
 
 //Middleware to very token and add user id to the req object if the user is valid
-import verifyToken from "../middleware/tokenVerify.js";
 const router = express.Router();
 
 router.get("/get", getAllMovies)
