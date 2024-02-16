@@ -131,7 +131,7 @@ function Login({ setisLogin }: LoginProps) {
         <LoadingButton
           loadingPosition="start"
           onClick={handleLogin}
-          loading={!loading}
+          loading={loading}
         >
           {!loading && "Login to your account"}
         </LoadingButton>

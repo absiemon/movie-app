@@ -173,7 +173,6 @@ input[type=text]::placeholder {
 .css-1rgmeur{
   font-family: 'Poppins', sans-serif !important;
   color: #5A698F !important;
-
 }
 
 .css-1wrxw3e{
@@ -197,4 +196,8 @@ input[type=text]::placeholder {
 .css-1wrxw3e:focus{
   background-color: #FFFFFF !important;
   color: black !important;
+}
+
+.css-1b7s7iz{
+  position: relative !important;
 }
