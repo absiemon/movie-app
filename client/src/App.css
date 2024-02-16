@@ -207,3 +207,19 @@ input[type=text]::placeholder {
   color: #FFFFFF !important;
   font-family: 'Poppins', sans-serif !important;
 }
+
+.css-f4jy6p{
+  font-size: 20px !important;
+  padding: 24px 20px !important;
+  border-radius:200px !important;
+  color: white !important;
+  border: 1px solid #5A698F !important;
+}
+
+.css-f4jy6p:hover {
+  background-color: #161D2F !important;
+}
+
+.css-f4jy6p.Mui-selected{
+  background-color: #161D2F !important;
+}
