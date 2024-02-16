@@ -39,7 +39,7 @@ function FavGenres() {
                 await axios.get(
                     '/dashboard/get/genres',
                     {
-                        headers:{
+                        headers: {
                             Authorization: `Bearer ${token}`
                         }
                     }
@@ -49,12 +49,12 @@ function FavGenres() {
                         setSelectedGenres(response.data?.favGenres?.genres || [])
                         setLoading(false)
                     })
-                    .catch (()=>{
+                    .catch(() => {
                         setLoading(false)
                         setSnackbar((prev) => {
                             return { ...prev, open: true, message: "Some error occured" };
                         });
-                    }) 
+                    })
             } catch (error) {
                 console.log(error)
             }
@@ -75,22 +75,30 @@ function FavGenres() {
     }
 
     //Calling api to save all selected genres in database for a preticular user
-    const handleAddToFav = async()=>{
+    const handleAddToFav = async () => {
+        const token = localStorage.getItem('token')
         setButtonLoading(true)
-        await axios.post('/dashboard/add/genres', selectedGenres)
-        .then(()=>{
-            setButtonLoading(false)
-            setSnackbar((prev) => {
-                return { ...prev, open: true, message: "Favourite genres updated successfully" };
-            });
-            navigate('/home')
 
-        }).catch(()=>{
-            setButtonLoading(false)
-            setSnackbar((prev) => {
-                return { ...prev, open: true, message: "Some error occured" };
-            });
-        })
+        await axios.post('/dashboard/add/genres', {genres: selectedGenres},
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+            .then(() => {
+                setButtonLoading(false)
+                setSnackbar((prev) => {
+                    return { ...prev, open: true, message: "Favourite genres updated successfully" };
+                });
+                navigate('/home')
+
+            }).catch(() => {
+                setButtonLoading(false)
+                setSnackbar((prev) => {
+                    return { ...prev, open: true, message: "Some error occured" };
+                });
+            })
     }
 
     return (
@@ -102,25 +110,25 @@ function FavGenres() {
                     <br />
                     <span>Genres</span>
                 </h1>
-               {!loading ? 
-               
-               <div className='grid bdsm:grid-cols-2 bdmd:grid-cols-3 gap-4 mt-4'>
-                    {allGenres && allGenres.map((elm) => {
-                        return (
-                            <div className='cursor-pointer bg-tertiary p-2 rounded-md flex justify-between' role='button'
-                                onClick={() => handleGenresClick(elm?.id)}>
-                                <p>{elm?.name}</p>
-                                {
-                                    selectedGenres.includes(elm?.id) ?
-                                        <CheckIcon sx={{ backgroundColor: '#161D2F', borderRadius: '20px', padding: '4px' }} />
-                                        : null
-                                }
-                            </div>
-                        )
-                    })}
-                </div>
-                :
-                <Loader/>
+                {!loading ?
+
+                    <div className='grid bdsm:grid-cols-2 bdmd:grid-cols-3 gap-4 mt-4'>
+                        {allGenres && allGenres.map((elm) => {
+                            return (
+                                <div className='cursor-pointer bg-tertiary p-2 rounded-md flex justify-between' role='button'
+                                    onClick={() => handleGenresClick(elm?.id)}>
+                                    <p>{elm?.name}</p>
+                                    {
+                                        selectedGenres.includes(elm?.id) ?
+                                            <CheckIcon sx={{ backgroundColor: '#161D2F', borderRadius: '20px', padding: '4px' }} />
+                                            : null
+                                    }
+                                </div>
+                            )
+                        })}
+                    </div>
+                    :
+                    <Loader />
                 }
                 <LoadingButton
                     loadingPosition="start"

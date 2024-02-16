@@ -2,27 +2,9 @@ import UserModel from "../models/UserModel.js";
 import axios from 'axios'
 const apiKey = process.env.TMDB_API_KEY
 
-// //To be removed---------
-// import fs from 'fs'
-// import { fileURLToPath } from 'url';
-// import path, { dirname } from 'path';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
-// const allGenresPath = path.join(__dirname, '..', 'data', 'allGenres.json');
-// const allTrendingPath = path.join(__dirname, '..', 'data', 'trendings.json');
-// //To be removed---------
-
-
 //getting all trending videos(movies/tv_series)
 export const getAllTrendingVideos = async (req, res) => {
     try {
-
-        // //to be removed
-        // if (fs.existsSync(allTrendingPath)) {
-        //     let genres = JSON.parse(fs.readFileSync(allTrendingPath, 'utf-8'));
-        //     return res.status(200).json(genres);
-        // } 
-        // //=========
 
         const response = await axios.get(
             `https://api.themoviedb.org/3/trending/all/day?language=en-US&api_key=${apiKey}`
@@ -99,7 +81,7 @@ export const getRecommendedations = async(req, res)=>{
 // add Favourite genres to particular user document
 
 export const addFavouriteGenres = async(req, res)=>{
-    const genresList = req.body
+    const genresList = req.body.genres;
     try {
         const user = req.user
 
