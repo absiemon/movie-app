@@ -19,7 +19,7 @@ function CustomSnackbar() {
         message={message}
         key={vertical + horizontal}
         sx={{
-            '& .css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root':{
+            '& .css-1gz1y6s':{
                 backgroundColor:'#161D2F',
                 color:'#FFFFFF',
                 fontFamily: "'Poppins', sans-serif",

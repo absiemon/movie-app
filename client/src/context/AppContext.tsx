@@ -66,7 +66,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   })
   const handleClose = () => {
     setSnackbar((prev) => {
-      return { ...prev, open: true };
+      return { ...prev, open: false };
     });
   };
 
