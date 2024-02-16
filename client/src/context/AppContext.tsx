@@ -113,8 +113,15 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
   //Function to create bookmark after clicking on bookmark icon for a particular user
   const createBookmark = async(videoInfo: any, bookmark_type: string)=>{
+    const token = localStorage.getItem('token')
 
-    await axios.post('/bookmark/create', {videoInfo, bookmark_type})
+    await axios.post('/bookmark/create', 
+    {videoInfo, bookmark_type},
+    {
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    })
     .then(()=>{
       setSnackbar((prev) => {
         return { ...prev, open: true, message: "Bookmarked successfully" };
