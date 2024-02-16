@@ -108,7 +108,7 @@ function Register({ setisLogin }: RegisterProps) {
                     sx={{
                         marginTop: '30px',
                         width: '100%',
-                        '& .css-batk84-MuiInputBase-root-MuiFilledInput-root': {
+                        '& .css-e2jmdx': {
                             borderBottom: `${error.emailError && '1px solid #FC4747 !important'}`
                         }
                     }}
@@ -127,7 +127,7 @@ function Register({ setisLogin }: RegisterProps) {
                     sx={{
                         marginTop: '20px',
                         width: '100%',
-                        '& .css-batk84-MuiInputBase-root-MuiFilledInput-root': {
+                        '& .css-e2jmdx': {
                             borderBottom: `${error.passwordError && '1px solid #FC4747 !important'}`
                         }
                     }}
@@ -146,7 +146,7 @@ function Register({ setisLogin }: RegisterProps) {
                     sx={{
                         marginTop: '20px',
                         width: '100%',
-                        '& .css-batk84-MuiInputBase-root-MuiFilledInput-root': {
+                        '& .css-e2jmdx': {
                             borderBottom: `${error.repeatPassError && '1px solid #FC4747 !important'}`
                         }
                     }}

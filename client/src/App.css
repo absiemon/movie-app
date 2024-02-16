@@ -144,12 +144,6 @@ input[type=text]::placeholder {
 
 }
 
-.css-2bxn45:focus{
-  border-bottom: 0px solid #5A698F !important;
-}
-
-
-
 .css-14x1nlk{
   color: #5A698F !important;
   font-family: 'Poppins', sans-serif !important;
@@ -165,6 +159,9 @@ input[type=text]::placeholder {
 }
 
 .css-e2jmdx.Mui-focused .css-e2jmdx:hover{
+  border-bottom: 0px solid #5A698F !important;
+}
+.css-e2jmdx::after{
   border-bottom: 0px solid #5A698F !important;
 }
 
