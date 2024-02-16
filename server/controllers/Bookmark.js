@@ -32,12 +32,16 @@ export const createBookmark = async(req, res)=>{
         const user = req.user;
 
         //checking if the user has already bookmark that video or not
-        const data  = await BookmarkModel.findOne({videoId: videoId})
+        const data = await BookmarkModel.findOne({
+            videoId: videoId,
+            userId: user?.id
+        });
+
         if(data){
             return res.status(200).json({status: true, data: "Already bookmarked"});
         }
         else{
-            const bookmark = new BookmarkModel({userId: user.id, bookmark_type, videoId});
+            const bookmark = new BookmarkModel({userId: user?.id, bookmark_type, videoId});
             bookmark.save();
     
             return res.status(200).json({status: true, data: "Bookmark created successfully"});
