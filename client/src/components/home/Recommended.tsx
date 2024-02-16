@@ -1,5 +1,5 @@
 //This component will show all recommended videos
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
 import VideoCard from '../reusable/VideoCard';
 import axios from 'axios';
 import SkeletonLoader from '../reusable/SkeletonLoader';
@@ -11,9 +11,11 @@ import { VideoType } from '../../types/types'
 interface propType {
     searchInput: string;
     searchQuery: string;
+    pageNo: number, 
+    setPageNo: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function Recommended({ searchInput, searchQuery }: propType) {
+function Recommended({ searchInput, searchQuery, pageNo,  setPageNo}: propType) {
 
     //Defining the state for videos which needs to show in recommended section
     const [allVideos, setAllVideos] = useState<VideoType[]>([])
@@ -21,7 +23,6 @@ function Recommended({ searchInput, searchQuery }: propType) {
 
     //State for pagination
     const [count, setCount] = useState<number>(1)
-    const [pageNo, setPageNo] = useState<number>(1)
 
     //Fetching all the recommended videos on component mount
     //This user effect will run whenever change in pageNo and searchInput
@@ -86,7 +87,7 @@ function Recommended({ searchInput, searchQuery }: propType) {
                 :
                 <SkeletonLoader />
             }
-            
+
             <PaginationComponent count={count} setPageNo={setPageNo} />
 
         </section>

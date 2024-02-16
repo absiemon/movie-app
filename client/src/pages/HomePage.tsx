@@ -9,8 +9,11 @@ function HomePage() {
   //===================States for searching and pagination 
   const [searchQuery, setSearchQuery] = useState<string>(""); //state for onChange of input box
   const [searchInput, setSearchInput] = useState<string>("");  //state for searching videos
+  const [pageNo, setPageNo] = useState<number>(1)
+
  
   const handleSearch = async () => {
+    setPageNo(1)
     setSearchInput(searchQuery)
   }
 
@@ -37,7 +40,7 @@ function HomePage() {
       </section>
 
       <section className=''>
-        <Recommended searchInput={searchInput} searchQuery={searchQuery}/>
+        <Recommended searchInput={searchInput} searchQuery={searchQuery} pageNo={pageNo} setPageNo={setPageNo}/>
       </section>
 
     </main>
