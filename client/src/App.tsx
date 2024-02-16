@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { AppContext } from './context/AppContext';
 
 //Adding axios baseurl and headers so that we don't have to write it again and again
-axios.defaults.baseURL = "http://localhost:8000/api";
+axios.defaults.baseURL = "https://movie-app-server-wheat.vercel.app/api";
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
 
 function App() {

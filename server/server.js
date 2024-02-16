@@ -28,7 +28,7 @@ app.use(morgan());
 app.disable('etag')
 
 //// setting up cors. Only allowed origin can make api request
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['https://movie-app-client-dsz5.onrender.com'];
 const corsOptions = {
     credentials: true,
     origin: allowedOrigins,
