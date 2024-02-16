@@ -81,12 +81,13 @@ function Recommended({ searchInput, searchQuery }: propType) {
                         :
                         <NothingToShow />
                     }
-                    <PaginationComponent count={count} setPageNo={setPageNo} />
                 </>
 
                 :
                 <SkeletonLoader />
             }
+            
+            <PaginationComponent count={count} setPageNo={setPageNo} />
 
         </section>
     )
