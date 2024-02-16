@@ -33,9 +33,17 @@ function FavGenres() {
     //Fetching all genres when page loads
     useEffect(() => {
         const fetchGenres = async () => {
+            const token = localStorage.getItem('token')
             try {
                 setLoading(true)
-                await axios.get('/dashboard/get/genres')
+                await axios.get(
+                    '/dashboard/get/genres',
+                    {
+                        headers:{
+                            Authorization: `Bearer ${token}`
+                        }
+                    }
+                )
                     .then((response) => {
                         setAllGenres(response.data?.data?.genres)
                         setSelectedGenres(response.data?.favGenres?.genres || [])

@@ -66,7 +66,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   })
   const handleClose = () => {
     setSnackbar((prev) => {
-      return { ...prev, open: false };
+      return { ...prev, open: true };
     });
   };
 
@@ -88,8 +88,16 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
   //Function to fetch all bookmarks including tv series and movies for a particular user
   const fetchBookmark = async(search="")=>{
+    const token = localStorage.getItem('token')
 
-    await axios.get(`/bookmark/get?search=${search}`)
+    await axios.get(
+      `/bookmark/get?search=${search}`,
+      {
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
+      }
+    )
     .then((response) => {
       setMovies(response.data?.data?.movie)
       setTvSeries(response.data?.data?.tv)
