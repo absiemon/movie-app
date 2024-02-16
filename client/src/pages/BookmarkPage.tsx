@@ -9,7 +9,7 @@ import NothingToShow from '../components/reusable/NothingToShow';
 function BookmarkPage() {
   const {
     fetchBookmark, movies, tvSeries,
-    loading
+    loading, setLoading
   } = useContext(AppContext)
 
   const [searchQuery, setSearchQuery] = useState<string>(""); //state for onChange of input box
@@ -17,6 +17,7 @@ function BookmarkPage() {
 
   //Fethcing all bookmars when page loads
   useEffect(() => {
+    setLoading(true)
     fetchBookmark(searchInput)
   }, [searchInput])
 

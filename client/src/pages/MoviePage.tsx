@@ -32,6 +32,7 @@ function MoviePage() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
+        setLoading(true)
         await axios.get(`/movie/get?search=${searchQuery}&pageNo=${pageNo}`)
           .then((response) => {
             setAllMovies(response.data?.results)
@@ -92,13 +93,15 @@ function MoviePage() {
                   )
                 })}
               </div>
-              <PaginationComponent count={count} setPageNo={setPageNo} />
             </>
             :
             <NothingToShow />
           :
           <SkeletonLoader />
         }
+
+        <PaginationComponent count={count} setPageNo={setPageNo} />
+
       </section>
 
     </main>

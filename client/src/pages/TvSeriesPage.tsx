@@ -31,6 +31,7 @@ function TVSeriesPage() {
   useEffect(() => {
     const fetchTVSeries = async () => {
       try {
+        setLoading(true)
         await axios.get(`/tv/get?search=${searchQuery}&pageNo=${pageNo}`)
           .then((response) => {
             setTvSeries(response.data?.results)
@@ -91,13 +92,13 @@ function TVSeriesPage() {
                   )
                 })}
               </div>
-              <PaginationComponent count={count} setPageNo={setPageNo} />
             </>
             :
             <NothingToShow />
-          :
-          <SkeletonLoader />
-        }
+            :
+            <SkeletonLoader />
+          }
+          <PaginationComponent count={count} setPageNo={setPageNo} />
       </section>
 
 
