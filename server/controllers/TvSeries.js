@@ -1,25 +1,11 @@
 const apiKey = process.env.TMDB_API_KEY;
 import axios from 'axios'
 
-// //To be removed---------
-// import fs from 'fs'
-// import { fileURLToPath } from 'url';
-// import path, { dirname } from 'path';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
-// const allGenresPath = path.join(__dirname, '..', 'data', 'tvseries.json');
-// //To be removed---------
 
 //Getting all tv series
 export const getAllTvSeries = async (req, res) => {
     const { search, pageNo } = req.query;
     try {
-        //  //To be removed-------------
-        //  if (fs.existsSync(allGenresPath)) {
-        //     let genres = JSON.parse(fs.readFileSync(allGenresPath, 'utf-8'));
-        //     return res.status(200).json(genres);
-        // } 
-        // //To be removed-------------
         
         if(search.length === 0){
 

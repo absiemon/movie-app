@@ -108,19 +108,10 @@ export const getAllGenres = async(req, res)=>{
         //finding all favourite generas for a user
         const favGenres = await UserModel.findById(user._id).select({genres: 1})
 
-        // //===========to be removed=============
-        // if (fs.existsSync(allGenresPath)) {
-        //     let genres = JSON.parse(fs.readFileSync(allGenresPath, 'utf-8'));
-        //     return res.status(200).json({status:true, favGenres,  data: genres, });
-        // } 
-        // //===========to be removed=============
-
-        // else {
-            const response = await axios.get(
-                `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${apiKey}`
-            );
-            return res.status(200).json({status:true, favGenres,  data: response.data });
-        // }
+        const response = await axios.get(
+            `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${apiKey}`
+        );
+        return res.status(200).json({status:true, favGenres,  data: response.data });
 
     } catch (error) {
         res
