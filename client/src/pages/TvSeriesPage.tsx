@@ -71,11 +71,11 @@ function TVSeriesPage() {
 
       <section className=''>
         <h1 className='text-xl'>
-          {!searchInput ? "Tv Series" : `Found ${(allTvSeries.length || 1) * count} results for '${searchInput}'`}
+          {!searchInput ? "Tv Series" : `Found ${(allTvSeries?.length || 1) * count} results for '${searchInput}'`}
         </h1>
         {!loading ?
 
-          allTvSeries.length > 0 ?
+          allTvSeries?.length > 0 ?
             <>
               <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
                 {allTvSeries && allTvSeries.map((series, _index) => {

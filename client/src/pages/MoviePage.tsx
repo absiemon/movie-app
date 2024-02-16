@@ -72,11 +72,11 @@ function MoviePage() {
 
       <section className=''>
         <h1 className='text-xl'>
-          {!searchInput ? "Movies" : `Found ${(allMovies.length || 1) * count} results for '${searchInput}'`}
+          {!searchInput ? "Movies" : `Found ${(allMovies?.length || 1) * count} results for '${searchInput}'`}
         </h1>
         {!loading ?
 
-          allMovies.length > 0 ?
+          allMovies?.length > 0 ?
             <>
               <div className='xs:flex xs:flex-col xs:items-center sm:grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
                 {allMovies && allMovies.map((movie, _index) => {

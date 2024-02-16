@@ -47,7 +47,7 @@ function BookmarkPage() {
         </h1>
         {!loading ?
 
-          movies.length > 0 ?
+          movies?.length > 0 ?
             <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
               {movies && movies.map((movie, _index) => {
                 return (
@@ -77,7 +77,7 @@ function BookmarkPage() {
         </h1>
         {!loading ?
 
-          tvSeries.length > 0 ?
+          tvSeries?.length > 0 ?
             <div className='grid bdsm:grid-cols-2 md:grid-cols-3 bdmd:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4'>
               {tvSeries && tvSeries.map((series, _index) => {
                 return (
