@@ -149,6 +149,7 @@ input[type=text]::placeholder {
 }
 
 
+
 .css-14x1nlk{
   color: #5A698F !important;
   font-family: 'Poppins', sans-serif !important;
@@ -161,6 +162,16 @@ input[type=text]::placeholder {
   font-family: 'Poppins', sans-serif !important;
   background-color: #161D2F !important;
   border-bottom: 1px solid #5A698F !important;
+}
+
+.css-e2jmdx.Mui-focused .css-e2jmdx:hover{
+  border-bottom: 0px solid #5A698F !important;
+}
+
+.css-1rgmeur.Mui-focused{
+  color: #5A698F !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 11px !important;
 }
 
 .css-1wrxw3e{
