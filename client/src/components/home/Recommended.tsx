@@ -28,6 +28,7 @@ function Recommended({ searchInput, searchQuery }: propType) {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
+                setLoading(true)
                 const token = localStorage.getItem('token')
                 await axios.get(
                     `/dashboard/recommended?search=${searchQuery}&pageNo=${pageNo}`,
