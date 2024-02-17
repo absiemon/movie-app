@@ -7,6 +7,8 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import '../reusable/reusable.css'
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 //Defining the types of propes that component can accept
 interface VideoCardProps {
@@ -23,9 +25,12 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
     const {createBookmark, setSnackbar} = useContext(AppContext)
     //state to check whether the current trending video has been bookmarked or not
     const [isBookmarked, setIsBookmarked] = useState(false)
+    const [isBookmarking, setIsBookmarking] = useState<boolean>(false) // state to show laoder when adding or removing bookmark
 
     //Function to create a bookmark
     const handleCreateBookMark = async()=>{
+        setIsBookmarking(true)
+
         const videoInfo = {
             title, 
             release_date: releaseDate,
@@ -33,6 +38,8 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
             adult, id
         }
         await createBookmark(videoInfo, videoType)
+        setIsBookmarking(false)
+
         setIsBookmarked(true)
     }
 
@@ -60,10 +67,16 @@ function TrendingVideoCard({title, imageUrl, adult, id, videoType, releaseDate}:
 
             <div className={`absolute top-3 right-3 bg-gray-600 bg-opacity-50  h-10 w-10 flex items-center justify-center rounded-full hover:bg-white cursor-pointer hover:text-black `} 
             >
-                {!isBookmarked ? 
-                    <BookmarkBorderIcon onClick={handleCreateBookMark}/>
+                 {!isBookmarking ?
+                    <>
+                        {!isBookmarked ?
+                            <BookmarkBorderIcon onClick={handleCreateBookMark} />
+                            :
+                            <BookmarkIcon onClick={handleRemoveBookmark} />
+                        }
+                    </>
                     :
-                    <BookmarkIcon onClick={handleRemoveBookmark}/>
+                    <CircularProgress sx={{height:'25px', width:'25px', color:'#FFFFFF', marginTop:'2px'}}/>
                 }
             </div>
 

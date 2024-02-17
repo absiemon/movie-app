@@ -31,6 +31,7 @@ interface AppContextType {
   setLoading: Dispatch<SetStateAction<boolean>>; 
   pageNo: number; 
   setPageNo: Dispatch<SetStateAction<number>>; 
+
 }
 
 
@@ -168,7 +169,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         movies, setMovies,
         tvSeries, setTvSeries,
         loading, setLoading,
-        pageNo, setPageNo
+        pageNo, setPageNo,
       }}
     >
       {children}

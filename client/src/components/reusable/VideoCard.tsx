@@ -6,6 +6,7 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import './reusable.css'
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import CircularProgress from '@mui/material/CircularProgress';
 
 //Defing the type of props that component can accept
 
@@ -16,39 +17,46 @@ interface VideoCardProps {
     id?: number;
     videoType: string;
     releaseDate?: string;
-    bookmark?:boolean;
-    bookmarkId?:any;
+    bookmark?: boolean;
+    bookmarkId?: any;
 }
-  
 
-function VideoCard({title, imageUrl, adult, id, videoType, releaseDate, bookmark=false, bookmarkId}:VideoCardProps ) {
-    
-    const {createBookmark, removeBookmark, fetchBookmark, setSnackbar} = useContext(AppContext)
+
+function VideoCard({ title, imageUrl, adult, id, videoType, releaseDate, bookmark = false, bookmarkId }: VideoCardProps) {
+
+    const { createBookmark, removeBookmark, fetchBookmark, setSnackbar } = useContext(AppContext)
 
     //state to check whether the current trending video has been bookmarked or not
     const [isBookmarked, setIsBookmarked] = useState(bookmark)
+    const [isBookmarking, setIsBookmarking] = useState<boolean>(false) // state to show laoder when adding or removing bookmark
 
-    const handleCreateBookMark = async()=>{
+    const handleCreateBookMark = async () => {
+        setIsBookmarking(true)
         const videoInfo = {
-            title, 
+            title,
             release_date: releaseDate,
             poster_path: imageUrl,
             adult, id
         }
         await createBookmark(videoInfo, videoType)
+        setIsBookmarking(false)
         setIsBookmarked(true)
     }
 
     //Function to remove bookmark. Remember we need to go to bookmark page to remove the bookmark
     //because the bookmark can only be removed with its mongodb _id
-    const handleRemoveBookmark = async()=>{
-        if(!bookmarkId){
+    const handleRemoveBookmark = async () => {
+        if (!bookmarkId) {
             setSnackbar((prev) => {
                 return { ...prev, open: true, message: "Go to bookmark tab to remove." };
             });
             return;
         }
+        setIsBookmarking(true)
+
         await removeBookmark(bookmarkId)
+        setIsBookmarking(false)
+
         setIsBookmarked(false)
         await fetchBookmark()
     }
@@ -62,24 +70,30 @@ function VideoCard({title, imageUrl, adult, id, videoType, releaseDate, bookmark
                 alt='image'
                 className='rounded-lg h-[170px] w-[250px] hover:opacity-70 cursor-pointer object-cover'
                 role='button'
-                onClick={()=> 
+                onClick={() =>
                     navigate(`/home/video/details?type=${videoType}&id=${id}`)
                 }
             />
 
-            <div className={`absolute top-3 right-3 bg-gray-600 bg-opacity-50  h-10 w-10 flex items-center justify-center rounded-full hover:bg-white cursor-pointer hover:text-black `} 
+            <div className={`absolute top-3 right-3 bg-gray-600 bg-opacity-50  h-10 w-10 flex items-center justify-center rounded-full hover:bg-white cursor-pointer hover:text-black `}
             >
-                {!isBookmarked ? 
-                    <BookmarkBorderIcon  onClick={handleCreateBookMark}/>
+                {!isBookmarking ?
+                    <>
+                        {!isBookmarked ?
+                            <BookmarkBorderIcon onClick={handleCreateBookMark} />
+                            :
+                            <BookmarkIcon onClick={handleRemoveBookmark} />
+                        }
+                    </>
                     :
-                    <BookmarkIcon onClick={handleRemoveBookmark}/>
+                    <CircularProgress sx={{height:'25px', width:'25px', color:'#FFFFFF', marginTop:'2px'}}/>
                 }
             </div>
 
             <div
                 className='gap-2 absolute top-[70px] left-[90px] bg-white bg-opacity-30 p-2 rounded-full text-xl hidden cursor-pointer play-container'
                 role='button'
-                onClick={()=> 
+                onClick={() =>
                     navigate(`/home/video/details?type=${videoType}&id=${id}`)
                 }
             >
