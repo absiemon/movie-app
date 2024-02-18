@@ -18,7 +18,7 @@ function HomePage() {
   }
 
   return (
-    <main className='flex flex-col xs:w-[60vw] sm:w-[80vw] md:w-[88vw] gap-6'>
+    <main className='flex flex-col xs:w-[100%] sm:w-[100%] md:w-[88vw] gap-6'>
       <header className='bg-secondary h-[50px] rounded-xl flex gap-2 items-center px-3'>
         <SearchIcon sx={{color:'white'}}/>
         <input

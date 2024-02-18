@@ -2,10 +2,12 @@
 
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { VideoDetailsType } from '../../types/types';
 import VideoDetailsLoader from './VideoDetailsLoader';
+import linkIcon from '../../assets/link.png'
+import ImdbIcon from '../../assets/imdb.png'
 
 //Defing the type of query params. I am adding videoId and type in the url on clicking on a particuler video to show its detail
 interface queryParamsType {
@@ -29,7 +31,7 @@ function VideoDetailsPage() {
   //Getting the values (videoId and type) from the url and calling api to fetch 
   //details of a particular video
   useEffect(() => {
-    setLoading(true)
+    setLoading(false)
 
     const queryParams = new URLSearchParams(search);
     const queryParamsObject: queryParamsType = {};
@@ -144,6 +146,24 @@ function VideoDetailsPage() {
                   )
                 })}
               </div>
+            </div>
+
+            <div className='flex gap-3 w-full justify-items-start'>
+              <Link 
+                  className='flex items-center gap-4 px-6 py-2 rounded-md bg-[#5A698F]' 
+                  to={videoInfo?.homepage || ''}
+                >
+                <p>Website</p>
+                <img src={linkIcon} alt='icon' className='h-[18px]'/>
+              </Link>
+              {params?.type === 'movie' && 
+               <Link 
+                  className='flex items-center gap-4 px-6 py-2 rounded-md bg-[#5A698F]' 
+                  to={`https://www.imdb.com/title/${videoInfo?.imdb_id}`}
+                >
+                <p>Imdb</p>
+                <img src={ImdbIcon} alt='icon' className='h-[20px]'/>
+              </Link>}
             </div>
 
           </section>

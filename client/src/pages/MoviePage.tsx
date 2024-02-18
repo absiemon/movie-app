@@ -55,7 +55,7 @@ function MoviePage() {
   }
 
   return (
-    <main className='flex flex-col w-[95vw] gap-6'>
+    <main className='flex flex-col xs:w-[100%] md:w-[95vw] gap-6'>
       <header className='bg-secondary h-[50px] rounded-xl flex gap-2 items-center px-3'>
         <SearchIcon sx={{ color: 'white' }} />
         <input

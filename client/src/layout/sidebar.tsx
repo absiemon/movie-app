@@ -1,4 +1,4 @@
-import{ useContext } from 'react'
+import { useContext } from 'react'
 import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import TheatersIcon from '@mui/icons-material/Theaters';
@@ -24,14 +24,18 @@ function sidebar() {
 
     return (
         <header
-            className='h-[90vh] xs:w-[20vw] sm:w-[10vw] md:w-[5vw] bg-secondary 
-            rounded-2xl flex flex-col items-center py-4 justify-between fixed overflow-y-scroll'
+            className='xs:h-[15vh] sm:h-[10vh] md:h-[90vh] xs:w-[100%] md:w-[5vw] bg-secondary 
+            md:rounded-2xl sm:flex md:flex-col items-center py-4 justify-between md:fixed 
+            md:overflow-y-scroll xs:px-5 md:px-0 xs:mb-4 md:mb-0'
         >
-
-            <div className='flex flex-col items-center gap-7'>
+            <div className='xs:flex w-[100%] items-center justify-center sm:block'>
                 <MovieCreationIcon
-                    sx={{ fontSize: '30px', color: '#FC4747', mb: 4 }}
+                    sx={{ fontSize: '30px', color: '#FC4747' }}
                 />
+            </div>
+
+            <div className='flex md:flex-col items-center justify-center gap-5'>
+
                 <Link to='/home'>
                     <Tooltip title="Dashboard" placement='right-start' >
                         <DashboardIcon
@@ -77,18 +81,19 @@ function sidebar() {
                         />
                     </Tooltip>
                 </Link>
-            </div>
-            <div className='flex flex-col items-center gap-6 '>
-                <Tooltip title="Logout" placement='right-start' >
-                    <div className='text-[#5A698F] hover:text-[#FFFFFF] cursor-pointer' onClick={handleLogOut}>
-                        <LogoutIcon />
-                    </div>
-                </Tooltip>
+                <div className='flex md:flex-col items-center gap-6  sm:ml-[150px] md:ml-[0px] md:mt-[150px]'>
+                    <Tooltip title="Logout" placement='right-start' >
+                        <div className='text-[#5A698F] hover:text-[#FFFFFF] cursor-pointer' onClick={handleLogOut}>
+                            <LogoutIcon />
+                        </div>
+                    </Tooltip>
 
-                <Avatar sx={{ backgroundColor: '#FC4747', color: '#FFFFFF' }}>
-                    {user?.email?.charAt(0).toUpperCase()}
-                </Avatar>
+                    <Avatar sx={{ backgroundColor: '#FC4747', color: '#FFFFFF' }}>
+                        {user?.email?.charAt(0).toUpperCase()}
+                    </Avatar>
+                </div>
             </div>
+           
         </header>
     )
 }

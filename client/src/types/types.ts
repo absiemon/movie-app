@@ -60,6 +60,8 @@ export type snackbarType = {
     genres?: genresType[],
     overview?: string,
     casts?: genresType[],
+    homepage?:string,
+    imdb_id?: string
   }
 
   export type bookmarkVideoType = {
