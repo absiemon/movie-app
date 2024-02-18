@@ -28,7 +28,7 @@ function sidebar() {
             md:rounded-2xl sm:flex md:flex-col items-center py-4 justify-between md:fixed 
             md:overflow-y-scroll xs:px-5 md:px-0 xs:mb-4 md:mb-0'
         >
-            <div className='xs:flex w-[100%] items-center justify-center sm:block'>
+            <div className='xs:flex w-[100%] items-center justify-center sm:block md:flex'>
                 <MovieCreationIcon
                     sx={{ fontSize: '30px', color: '#FC4747' }}
                 />
