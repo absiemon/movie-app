@@ -31,7 +31,7 @@ function VideoDetailsPage() {
   //Getting the values (videoId and type) from the url and calling api to fetch 
   //details of a particular video
   useEffect(() => {
-    setLoading(false)
+    setLoading(true)
 
     const queryParams = new URLSearchParams(search);
     const queryParamsObject: queryParamsType = {};
@@ -152,6 +152,7 @@ function VideoDetailsPage() {
               <Link 
                   className='flex items-center gap-4 px-6 py-2 rounded-md bg-[#5A698F]' 
                   to={videoInfo?.homepage || ''}
+                  target='_blank'
                 >
                 <p>Website</p>
                 <img src={linkIcon} alt='icon' className='h-[18px]'/>
@@ -160,6 +161,7 @@ function VideoDetailsPage() {
                <Link 
                   className='flex items-center gap-4 px-6 py-2 rounded-md bg-[#5A698F]' 
                   to={`https://www.imdb.com/title/${videoInfo?.imdb_id}`}
+                  target='_blank'
                 >
                 <p>Imdb</p>
                 <img src={ImdbIcon} alt='icon' className='h-[20px]'/>
